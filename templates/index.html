@@ -1,0 +1,33 @@
+
+
+<section class="initial">
+    <h1>Spotipy results</h1>
+    <br>
+  </section>
+
+
+  <section class="stats">
+    <h2>Top artists for this month</h2>
+      <div class="columns">
+        {%- for artist in artists %}
+        <div class="games">
+          <div class="stats"> 
+            <h6>{{artist}}</h6>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+  </section>
+
+  <section class="stats">
+    <h2>Top tracks for this month</h2>
+      <div class="columns">
+        {%- for track in tracks %}
+        <div class="games">
+          <div class="stats"> 
+            <h6>{{track}}</h6>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+  </section>
