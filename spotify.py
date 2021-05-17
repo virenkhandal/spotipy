@@ -1,4 +1,5 @@
 import spotipy, requests
+import pandas as pd
 from spotipy.oauth2 import SpotifyClientCredentials
 from private import client_id, secret, oauth
 
@@ -22,17 +23,27 @@ class BearerAuth(requests.auth.AuthBase):
 def getArtists():
     artists = requests.get(artists_endpoint, params=short_payload, auth=BearerAuth(oauth))
     top_artists = []
+    images = []
+    # print(artists.json())
     for i in artists.json().get("items"):
         artist = i.get("name")
+        # image = i.get("images")[0].get('url')
         top_artists.append(artist)
+        # images.append(image)
+    df = pd.DataFrame(list(zip(top_artists, images)), columns=['Artist', 'Image'])
     return top_artists
 
 def getTracks():
     tracks = requests.get(tracks_endpoint, params=short_payload, auth=BearerAuth(oauth))
     top_tracks = []
+    images = []
+    print(tracks.json())
     for i in tracks.json().get("items"):
         track = i.get("name")
+        # image = i.get("images")[0].get('url')
         top_tracks.append(track)
+        # images.append(image)
+    df = pd.DataFrame(list(zip(top_tracks, images)), columns=['Track', 'Image'])
     return top_tracks
 
 if __name__ == "__main__":
