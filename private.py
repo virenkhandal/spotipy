@@ -1,0 +1,3 @@
+client_id = '61bb4c3ea3c24253a738bd8f34956191'
+secret = '43e1501fc8d94c768d8af79f096395eb'
+oauth = 'BQAImAznddNDmfm98hjb2Q1iT1WT_6VH2NjVJifIi7ly1lSzfAGeWkgb5Q0R4sQbEJ347RCJIL_1ketTvxIXU4Ddvu-1jMU50UKUbGDSAoLOBS-qVG_hQgStoBHm82sBEk6wbOTbU4jWq3bIsvj96hc'
