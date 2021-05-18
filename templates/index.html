@@ -11,8 +11,9 @@
       <div class="columns">
         {%- for artist in artists %}
         <div class="games">
-          <div class="stats"> 
-            <h6>{{artist}}</h6>
+          <div class="stats">
+            <img src={{artist[1]}} alt={{ artist[1] }} width="90" height="90"/>
+            <h6>{{artist[0]}}</h6>
           </div>
         </div>
         {%- endfor %}

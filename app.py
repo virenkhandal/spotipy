@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 from spotify import *
+import jinja2
+env = jinja2.Environment()
+env.globals.update(zip=zip)
 # import matplotlib
 # matplotlib.use('Agg')
 app = Flask(__name__)
