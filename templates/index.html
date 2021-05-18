@@ -1,35 +1,41 @@
-
-
-<section class="initial">
-    <h1>Spotipy results</h1>
-    <br>
-  </section>
-
-
-  <section class="stats">
-    <h2>Top artists for this month</h2>
-      <div class="columns">
-        {%- for artist in artists %}
-        <div class="games">
-          <div class="stats">
-            <img src={{artist[1]}} alt={{ artist[1] }} width="90" height="90"/>
-            <h6>{{artist[0]}}</h6>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SpotiPy</title>
+  </head>
+  <body>
+    <section class="initial">
+      <h1>Spotipy results</h1>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+      <link rel="stylesheet" href="../static/results.css">
+    </section>
+    <section class="stats">
+      <h2>Top artists for this month</h2>
+        <div class="columns">
+          {%- for artist in artists %}
+          <div class="games">
+            <div class="stats">
+              <img src={{artist[1]}} alt={{ artist[1] }} width="90" height="90"/>
+              <h6>{{artist[0]}}</h6>
+            </div>
           </div>
+          {%- endfor %}
         </div>
-        {%- endfor %}
-      </div>
-  </section>
-
-  <section class="stats">
-    <h2>Top tracks for this month</h2>
-      <div class="columns">
-        {%- for track in tracks %}
-        <div class="games">
-          <div class="stats">
-            <img src={{track[1]}} alt={{ track[1] }} width="90" height="90"/>
-            <h6>{{track[0]}}</h6>
+    </section>
+  
+    <section class="stats">
+      <h2>Top tracks for this month</h2>
+        <div class="columns">
+          {%- for track in tracks %}
+          <div class="games">
+            <div class="stats">
+              <img src={{track[1]}} alt={{ track[1] }} width="90" height="90"/>
+              <h6>{{track[0]}}</h6>
+            </div>
           </div>
+          {%- endfor %}
         </div>
-        {%- endfor %}
-      </div>
-  </section>
+    </section>
+  </body>
+</html>
