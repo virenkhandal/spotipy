@@ -40,13 +40,11 @@ def getTracks():
     top_tracks = []
     images = []
     # print(tracks.json())
-    j = 0
     for i in tracks.json().get("items"):
-        if j == 0:
-            image = i
-            print(image)
         track = i.get("name")
-        top_tracks.append(track)
+        image = i.get('album').get('images')[0].get("url")
+        curr = [track, image]
+        top_tracks.append(curr)
         # images.append(image)
     return top_tracks
 
