@@ -1,6 +1,6 @@
 import spotipy, requests
 from spotipy.oauth2 import SpotifyClientCredentials
-from private import client_id, secret, oauth
+# from private import client_id, secret, oauth
 import jinja2
 env = jinja2.Environment()
 env.globals.update(zip=zip)
