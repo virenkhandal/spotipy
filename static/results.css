@@ -1,0 +1,29 @@
+section{
+    text-align: center;
+}
+
+.artist{
+    display: flex;
+    margin: auto;
+    margin-left: 45%;
+    margin-bottom: 10px;
+    align-content: center;
+}
+.artist-name{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 10px;
+}
+
+.track{
+    display: flex;
+    margin: auto;
+    margin-left: 45%;
+    margin-bottom: 10px;
+    align-content: center;
+}
+.track-name{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 10px;
+}
