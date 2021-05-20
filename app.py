@@ -13,8 +13,8 @@ auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type'
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
-    requests.get('https://accounts.spotify.com/authorize', params=auth_payload)
-    return
+    # requests.get('https://accounts.spotify.com/authorize', params=auth_payload)
+    return render_template('index.html')
     
 
 @app.route('/results', methods=['GET', 'POST'])
@@ -22,7 +22,7 @@ def results():
     token = request.args.get('access_token')
     artists = getArtists(token)
     tracks = getTracks(token)
-    return render_template('index.html', artists=artists, tracks=tracks)
+    return render_template('results.html', artists=artists, tracks=tracks)
 
 if __name__ == '__main__':
     app.run(debug=True)
