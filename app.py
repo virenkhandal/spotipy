@@ -10,7 +10,7 @@ from flask import request
 # matplotlib.use('Agg')
 app = Flask(__name__)
 
-auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'http://127.0.0.1:5000/results'}
+auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults%2F'}
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
@@ -19,12 +19,8 @@ def homepage():
 @app.route('/en/login', methods=['GET', 'POST'])
 def login():
     r = requests.get('https://accounts.spotify.com/authorize', params=auth_payload)
-    token = request.args.get('access_token')
-    # print(r.text)
-    # artists = getArtists(token)
-    # tracks = getTracks(token)
     return render_template_string(r.text)
-    
+
 @app.route('/results', methods=['GET', 'POST'])
 def results():
     token = request.args.get('access_token')
