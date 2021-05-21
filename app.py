@@ -16,7 +16,7 @@ auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type'
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
-    auth_url = 'https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults%2F&scope=user-top-read'
+    auth_url = 'https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=codee&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults%2F&scope=user-top-read'
     # auth_url = 'http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fresults%2F&scope=user-top-read'
     return redirect(auth_url)
 
@@ -30,7 +30,8 @@ def results():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        "redirect_uri":"http://127.0.0.1:5000/results/",
+        # "redirect_uri":"http://127.0.0.1:5000/results/",
+        "redirect_uri":"https://spotipy1.herokuapp.com/results/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
