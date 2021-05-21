@@ -22,7 +22,7 @@ def login():
     r = requests.get('https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=token&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults/')
     return render_template_string(r.text)
 
-@app.route('/results', methods=['GET', 'POST'])
+@app.route('/results/', methods=['GET', 'POST'])
 def results():
     token = request.args.get('access_token')
     artists = getArtists(token)
