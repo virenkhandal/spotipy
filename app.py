@@ -42,6 +42,7 @@ def results():
     res_body = res.json()
     # print(res.json())
     session["toke"] = res_body.get("access_token")
+    res.set_cookie('access_token', session["toke"])
     # print("token: ", session['toke'])
     # artists = getArtists(session["toke"])
     # tracks = getTracks(session["toke"])
@@ -49,9 +50,8 @@ def results():
 
 @app.route('/short', methods=['GET', 'POST'])
 def short():
-    url = 'https://spotipy1.herokuapp.com/results/'
-    r = requests.get(url)
-    print("cookies: ", r.cookies)
+    token = request.cookies.get('access_token')
+    print("token: ", token)
     # print(session.get("toke"))
     token = session.get("toke")
     artists = getArtists(token, "short")
