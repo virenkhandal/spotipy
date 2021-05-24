@@ -49,7 +49,10 @@ def results():
 
 @app.route('/short', methods=['GET', 'POST'])
 def short():
-    print(session.get("toke"))
+    url = 'https://spotipy1.herokuapp.com/results/'
+    r = requests.get(url)
+    print("cookies: ", r.cookies)
+    # print(session.get("toke"))
     token = session.get("toke")
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
