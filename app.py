@@ -54,13 +54,13 @@ def short():
     return render_template('results.html', artists=artists, tracks=tracks)
 
 @app.route('/medium', methods=['GET', 'POST'])
-def short():
+def medium():
     artists = getArtists(session["toke"], "medium")
     tracks = getTracks(session["toke"], "medium")
     return render_template('results.html', artists=artists, tracks=tracks)
 
 @app.route('/long', methods=['GET', 'POST'])
-def short():
+def longs():
     artists = getArtists(session["toke"], "long")
     tracks = getTracks(session["toke"], "long")
     return render_template('results.html', artists=artists, tracks=tracks)
