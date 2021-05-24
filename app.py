@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, session
+from flask_session import Session
 from flask.templating import render_template_string
 from werkzeug.utils import redirect
 from spotify import *
@@ -14,6 +15,10 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults'}
 app.config.update(SESSION_COOKIE_SAMESITE="None", SESSION_COOKIE_SECURE=True)
+
+SESSION_TYPE = 'redis'
+app.config.from_object(__name__)
+Session(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
@@ -41,6 +46,8 @@ def results():
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
     res_body = res.json()
+    res.headers.add('Access-Control-Allow-Headers',
+                         "Origin, X-Requested-With, Content-Type, Accept, x-auth")
     # print(res.json())
     session["toke"] = res_body.get("access_token")
     # res.set_cookie('access_token', session["toke"])
