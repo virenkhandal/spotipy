@@ -20,8 +20,8 @@ def homepage():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    auth_url = 'https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults%2F&scope=user-top-read'
-    # auth_url = 'http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fresults%2F&scope=user-top-read'
+    # auth_url = 'https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults%2F&scope=user-top-read'
+    auth_url = 'http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fresults%2F&scope=user-top-read'
     return redirect(auth_url)
 
 @app.route('/results/', methods=['GET', 'POST'])
@@ -34,15 +34,16 @@ def results():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        # "redirect_uri":"http://127.0.0.1:5000/results/",
-        "redirect_uri":"https://spotipy1.herokuapp.com/results/",
+        "redirect_uri":"http://127.0.0.1:5000/results/",
+        # "redirect_uri":"https://spotipy1.herokuapp.com/results/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
     res_body = res.json()
     # print(res.json())
     session["toke"] = res_body.get("access_token")
-    res.set_cookie('access_token', session["toke"])
+    # res.set_cookie('access_token', session["toke"])
+    print(session.get("toke"))
     # print("token: ", session['toke'])
     # artists = getArtists(session["toke"])
     # tracks = getTracks(session["toke"])
@@ -50,26 +51,27 @@ def results():
 
 @app.route('/short', methods=['GET', 'POST'])
 def short():
-    token = request.cookies.get('access_token')
-    print("token: ", token)
-    # print(session.get("toke"))
     token = session.get("toke")
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
-    print(artists)
-    return render_template('results.html', artists=artists, tracks=tracks)
+    session["toke"] = token
+    return render_template('results.html', artists=artists, tracks=tracks, duration="short")
 
 @app.route('/medium', methods=['GET', 'POST'])
 def medium():
-    artists = getArtists(session["toke"], "medium")
-    tracks = getTracks(session["toke"], "medium")
-    return render_template('results.html', artists=artists, tracks=tracks)
+    token = session.get("toke")
+    artists = getArtists(token, "medium")
+    tracks = getTracks(token, "medium")
+    session["toke"] = token
+    return render_template('results.html', artists=artists, tracks=tracks, duration="medium")
 
 @app.route('/long', methods=['GET', 'POST'])
 def longs():
-    artists = getArtists(session["toke"], "long")
-    tracks = getTracks(session["toke"], "long")
-    return render_template('results.html', artists=artists, tracks=tracks)
+    token = session.get("toke")
+    artists = getArtists(token, "long")
+    tracks = getTracks(token, "long")
+    session["toke"] = token
+    return render_template('results.html', artists=artists, tracks=tracks, duration="long")
 
 if __name__ == '__main__':
     app.run(debug=True)

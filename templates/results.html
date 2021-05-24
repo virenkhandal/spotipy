@@ -11,7 +11,13 @@
       <link rel="stylesheet" href="../static/results.css">
     </section>
     <section class="stats">
-      <h2>Top artists for this month</h2>
+      {% if duration == "short" %}
+        <h2>Top artists for this month</h2>
+      {% elif duration == "medium" %}
+        <h2>Top artists for the past few months</h2>
+      {% else %}
+        <h2>Top artists for the past year</h2>
+      {% endif %}
         <div class="columns">
           {%- for artist in artists %}
           <div class="artists">

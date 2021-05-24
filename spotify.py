@@ -28,7 +28,7 @@ def getArtists(access_token, duration):
     elif duration == "medium":
         payload = mid_payload
     else:
-        duration = long_payload
+        payload = long_payload
     artists = requests.get(artists_endpoint, params=payload, auth=BearerAuth(access_token))
     top_artists = []
     images = []
@@ -47,7 +47,7 @@ def getTracks(access_token, duration):
     elif duration == "medium":
         payload = mid_payload
     else:
-        duration = long_payload
+        payload = long_payload
     tracks = requests.get(tracks_endpoint, params=payload, auth=BearerAuth(access_token))
     top_tracks = []
     images = []
