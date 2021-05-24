@@ -49,8 +49,10 @@ def results():
 
 @app.route('/short', methods=['GET', 'POST'])
 def short():
+    print(session["toke"])
     artists = getArtists(session["toke"], "short")
     tracks = getTracks(session["toke"], "short")
+    print(artists)
     return render_template('results.html', artists=artists, tracks=tracks)
 
 @app.route('/medium', methods=['GET', 'POST'])
