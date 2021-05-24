@@ -43,8 +43,26 @@ def results():
     # print(res.json())
     session["toke"] = res_body.get("access_token")
     # print("token: ", session['toke'])
-    artists = getArtists(session["toke"])
-    tracks = getTracks(session["toke"])
+    # artists = getArtists(session["toke"])
+    # tracks = getTracks(session["toke"])
+    return render_template('auth.html')
+
+@app.route('/short', methods=['GET', 'POST'])
+def short():
+    artists = getArtists(session["toke"], "short")
+    tracks = getTracks(session["toke"], "short")
+    return render_template('results.html', artists=artists, tracks=tracks)
+
+@app.route('/medium', methods=['GET', 'POST'])
+def short():
+    artists = getArtists(session["toke"], "medium")
+    tracks = getTracks(session["toke"], "medium")
+    return render_template('results.html', artists=artists, tracks=tracks)
+
+@app.route('/long', methods=['GET', 'POST'])
+def short():
+    artists = getArtists(session["toke"], "long")
+    tracks = getTracks(session["toke"], "long")
     return render_template('results.html', artists=artists, tracks=tracks)
 
 if __name__ == '__main__':

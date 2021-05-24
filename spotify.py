@@ -22,8 +22,14 @@ class BearerAuth(requests.auth.AuthBase):
         r.headers["authorization"] = "Bearer " + self.token
         return r
 
-def getArtists(access_token):
-    artists = requests.get(artists_endpoint, params=short_payload, auth=BearerAuth(access_token))
+def getArtists(access_token, duration):
+    if duration == "short":
+        payload = short_payload
+    elif duration == "medium":
+        payload = mid_payload
+    else:
+        duration = long_payload
+    artists = requests.get(artists_endpoint, params=payload, auth=BearerAuth(access_token))
     top_artists = []
     images = []
     print(artists)
@@ -35,8 +41,14 @@ def getArtists(access_token):
         # images.append(image)
     return top_artists
 
-def getTracks(access_token):
-    tracks = requests.get(tracks_endpoint, params=short_payload, auth=BearerAuth(access_token))
+def getTracks(access_token, duration):
+    if duration == "short":
+        payload = short_payload
+    elif duration == "medium":
+        payload = mid_payload
+    else:
+        duration = long_payload
+    tracks = requests.get(tracks_endpoint, params=payload, auth=BearerAuth(access_token))
     top_tracks = []
     images = []
     # print(tracks.json())
