@@ -14,11 +14,11 @@ import redis
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults'}
-app.config['SECRET KEY'] = 'mysecret'
+app.config['SECRET KEY'] = 'AAAAAAAaaaaaa!!!!!!'
 # app.config.update(SESSION_COOKIE_SAMESITE="None", SESSION_COOKIE_SECURE=True)
 
-SESSION_TYPE = 'redis'
-app.config.from_object(__name__)
+app.config['SESSION_TYPE'] = 'redis'
+# app.config.from_object(__name__)
 session = Session(app)
 
 @app.route('/', methods=['GET', 'POST'])
