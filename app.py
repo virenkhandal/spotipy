@@ -20,7 +20,10 @@ app.config['SECRET KEY'] = 'AAAAAAAaaaaaa!!!!!!'
 app.config['SESSION_TYPE'] = 'redis'
 # app.config.from_object(__name__)
 session = Session(app)
-
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
+    
 @app.route('/', methods=['GET', 'POST'])
 def homepage():
     return render_template('index.html')
