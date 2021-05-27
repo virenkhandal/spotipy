@@ -24,8 +24,6 @@ def login():
 
 @app.route('/results/', methods=['GET', 'POST'])
 def results():
-    # session.clear()
-    # print(request.full_path)
     code = request.args.get('code')
     # print("code: ", code)
     auth_token_url = f"https://accounts.spotify.com/api/token"
