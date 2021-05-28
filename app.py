@@ -41,7 +41,7 @@ def results():
     # print(res.json())
     token = res_body.get("access_token")
     # res.set_cookie('access_token', session["toke"])
-    print("token: ", token)
+    print("token: ", code)
     # print("token: ", session['toke'])
     # artists = getArtists(session["toke"])
     # tracks = getTracks(session["toke"])
