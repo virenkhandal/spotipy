@@ -38,7 +38,7 @@ def results():
     res_body = res.json()
     # res.headers.add('Access-Control-Allow-Headers',
     #                      "Origin, X-Requested-With, Content-Type, Accept, x-auth")
-    # print(res.json())
+    print(res.json())
     token = res_body.get("access_token")
     # res.set_cookie('access_token', session["toke"])
     print("token: ", code)
