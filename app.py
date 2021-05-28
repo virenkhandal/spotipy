@@ -39,9 +39,9 @@ def results():
     # res.headers.add('Access-Control-Allow-Headers',
     #                      "Origin, X-Requested-With, Content-Type, Accept, x-auth")
     # print(res.json())
-    session["toke"] = res_body.get("access_token")
+    token = res_body.get("access_token")
     # res.set_cookie('access_token', session["toke"])
-    print("token: ", session.get("toke"))
+    print("token: ", token)
     # print("token: ", session['toke'])
     # artists = getArtists(session["toke"])
     # tracks = getTracks(session["toke"])
