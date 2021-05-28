@@ -20,6 +20,7 @@ def homepage():
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
     code = request.args.get('code')
+    print("code: ", code)
     auth_token_url = f"https://accounts.spotify.com/api/token"
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
@@ -30,7 +31,9 @@ def short():
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
     res_body = res.json()
+    print("res: ", res_body)
     token = res_body.get("access_token")
+    print("token: ", token)
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
     session["toke"] = token
