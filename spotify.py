@@ -29,10 +29,12 @@ def getArtists(access_token, duration):
         payload = mid_payload
     else:
         payload = long_payload
-    artists = requests.get(artists_endpoint, params=payload, auth=BearerAuth(access_token))
+    auth = BearerAuth(access_token)
+    print(auth)
+    artists = requests.get(artists_endpoint, params=payload, auth=auth)
     top_artists = []
     images = []
-    print(artists)
+    print(artists.json())
     for i in artists.json().get("items"):
         artist = i.get("name")
         image = i.get("images")[0].get("url")
