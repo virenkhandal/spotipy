@@ -36,8 +36,8 @@ def results():
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
     res_body = res.json()
-    res.headers.add('Access-Control-Allow-Headers',
-                         "Origin, X-Requested-With, Content-Type, Accept, x-auth")
+    # res.headers.add('Access-Control-Allow-Headers',
+    #                      "Origin, X-Requested-With, Content-Type, Accept, x-auth")
     # print(res.json())
     session["toke"] = res_body.get("access_token")
     # res.set_cookie('access_token', session["toke"])
