@@ -24,6 +24,7 @@ def login():
 
 @app.route('/results/', methods=['GET', 'POST'])
 def results():
+    print(request.args)
     code = request.args.get('code')
     # print("code: ", code)
     auth_token_url = f"https://accounts.spotify.com/api/token"
@@ -38,7 +39,7 @@ def results():
     res_body = res.json()
     # res.headers.add('Access-Control-Allow-Headers',
     #                      "Origin, X-Requested-With, Content-Type, Accept, x-auth")
-    print(res.json())
+    print("res: ", res.json())
     token = res_body.get("access_token")
     # res.set_cookie('access_token', session["toke"])
     print("token: ", code)
