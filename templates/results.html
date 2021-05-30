@@ -22,7 +22,7 @@
     </section>
     <section class="stats">
       {% if duration == "short" %}
-        <h2>Top artists for this month</h2>
+        <h2>Top artists for the past month</h2>
       {% elif duration == "medium" %}
         <h2>Top artists for the past few months</h2>
       {% else %}
@@ -41,7 +41,13 @@
     </section>
   
     <section class="stats">
-      <h2>Top tracks for this month</h2>
+      {% if duration == "short" %}
+        <h2>Top tracks for the past month</h2>
+      {% elif duration == "medium" %}
+        <h2>Top tracks for the past few months</h2>
+      {% else %}
+        <h2>Top tracks for the past year</h2>
+      {% endif %}
         <div class="columns">
           {%- for track in tracks %}
           <div class="tracks">
