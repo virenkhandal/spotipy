@@ -22,6 +22,7 @@ html{
     color: white;
     font-size: 100px;
 
+    /* parallax */
     background-image: radial-gradient(#00b09b, #96c93d);
     background-attachment: fixed;
     background-position: center;
