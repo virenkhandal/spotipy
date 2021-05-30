@@ -1,10 +1,12 @@
 html{
+    /* aligning content */
     align-content: center;
     align-items: center;
     /* margin: auto; */
     vertical-align: middle;
     text-align: center;
 
+    /* template grid setting */
     grid-template-columns: 30% 30% 30%;
     column-gap: 10px;
     grid-template-rows: 30% 30% 30%;
@@ -13,10 +15,12 @@ html{
 
 #title-section{
     /* height: 100%; */
+    /* sizing title section */
     padding-top: 12%;
     padding-bottom: 11%;
     margin-bottom: 100px;
     
+    /* fonts */
     font-family: 'Pacifico', cursive;
     /* -webkit-text-stroke: 1px black; */
     color: white;
