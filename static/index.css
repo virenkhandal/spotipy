@@ -16,9 +16,9 @@ html{
 #title-section{
     /* height: 100%; */
     /* sizing title section */
-    padding-top: 12%;
-    padding-bottom: 11%;
-    margin-bottom: 100px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 10px;
     
     /* fonts */
     font-family: 'Pacifico', cursive;
@@ -32,4 +32,23 @@ html{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+a:visited{
+    color: white;
+    text-decoration: none;
 }
