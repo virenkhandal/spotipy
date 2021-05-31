@@ -29,7 +29,7 @@
         <h2>Top artists for the past year</h2>
       {% endif %}
         <div class="columns">
-          {%- for artist in artists | batch(5) %}
+          {%- for artist in artists %}
           <div class="artists">
             <div class="artist">
               <img src={{artist[1]}} alt={{ artist[1] }} width="100" height="100"/>
@@ -49,7 +49,7 @@
         <h2>Top tracks for the past year</h2>
       {% endif %}
         <div class="columns">
-          {%- for track in tracks | batch(5) %}
+          {%- for track in tracks %}
           <div class="tracks">
             <div class="track">
               <img src={{track[1]}} alt={{ track[1] }} width="100" height="100"/>
