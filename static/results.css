@@ -19,7 +19,7 @@ section{
 .track{
     display: flex;
     margin: auto;
-    margin-left: 45%;
+    margin-left: 15%;
     margin-bottom: 10px;
     align-content: center;
 }
@@ -27,4 +27,5 @@ section{
     padding-top: 25px;
     padding-bottom: 25px;
     margin-left: 10px;
+    margin-right: 60px;
 }

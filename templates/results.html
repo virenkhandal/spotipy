@@ -53,11 +53,13 @@
       <strong><h2>Top tracks for the past year</h2></strong>
       {% endif %}
         <div class="columns">
-          {%- for track in tracks %}
+          {%- for track_row in tracks | batch(5) %}
           <div class="tracks">
             <div class="track">
+              {%- for track in track_row %}
               <img src={{track[1]}} alt={{ track[1] }} width="100" height="100"/>
               <h6 class="track-name">{{track[0]}}</h6>
+              {%- endfor %}
             </div>
           </div>
           {%- endfor %}
