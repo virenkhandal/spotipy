@@ -1,7 +1,10 @@
 section{
     text-align: center;
 }
-
+h2 {
+    color: green;
+    font-weight: 2;
+}
 .artist{
     display: flex;
     margin: auto;
