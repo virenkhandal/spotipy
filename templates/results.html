@@ -4,31 +4,34 @@
     <title>SpotiPy</title>
   </head>
   <body>
-    <section class="initial">
+    <div class="container">
+    <section id="initial">
       <h1>Spotipy results</h1>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link rel="stylesheet" href="../static/results.css">
     </section>
-    <section>
-      <button> <a href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F'> Short </a></button>
+    <section id="menu">
+      <!-- <button> <a href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F'> Short </a></button>
       <button> <a href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fmedium%2F'> Medium </a></button>
-      <button> <a href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F'> Long </a></button>
+      <button> <a href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F'> Long </a></button> -->
 
 
-        <!-- <button> <a href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read'> Short </a></button>
+        <button> <a href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read'> Short </a></button>
         <button> <a href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fmedium%2F&scope=user-top-read'> Medium </a></button>
-        <button> <a href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read'> Long </a></button> -->
+        <button> <a href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read'> Long </a></button>
     </section>
-    <section class="stats">
+    <section class="artists">
+      <div class="artist-header">
       {% if duration == "short" %}
-      <strong><h2>Top artists for the past month</h2></strong>
+      <strong><h2 class="artist-header">Top artists for the past month</h2></strong>
       {% elif duration == "medium" %}
-      <strong><h2>Top artists for the past few months</h2></strong>
+      <strong><h2 class="artist-header">Top artists for the past few months</h2></strong>
       {% else %}
-      <strong><h2>Top artists for the past year</h2></strong>
+      <strong><h2 class="artist-header">Top artists for the past year</h2></strong>
       {% endif %}
-        <div class="columns">
+    </div>
+        <div class="artist-columns">
           {%- for artist_row in artists | batch(5) %}
           <div class="artists">
             
@@ -44,7 +47,7 @@
         </div>
     </section>
   
-    <section class="stats">
+    <section class="tracks">
       {% if duration == "short" %}
         <strong><h2>Top tracks for the past month</h2></strong>
       {% elif duration == "medium" %}
@@ -52,7 +55,7 @@
       {% else %}
       <strong><h2>Top tracks for the past year</h2></strong>
       {% endif %}
-        <div class="columns">
+        <div class="track-columns">
           {%- for track_row in tracks | batch(5) %}
           <div class="tracks">
             <div class="track">
@@ -65,5 +68,6 @@
           {%- endfor %}
         </div>
     </section>
+  </div>
   </body>
 </html>

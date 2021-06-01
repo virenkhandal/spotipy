@@ -1,9 +1,41 @@
-section{
-    text-align: center;
+.container {
+    display: grid;
+    grid-template-columns: 7.5% 17% 17% 17% 17% 17% 7.5%;
+    grid-template-rows: 5% 5% 5% 40% 5% 40% 5%;
+    width: 100vw;
+    height: 100vw;
 }
+/* body {
+    grid-area: 1 / 1 / 8 / 8;
+    display: grid;
+    grid-template-columns: 7.5% 17% 17% 17% 17% 17% 7.5%;
+    grid-template-rows: 10% 10% 10% 40% 10% 40% 10%;
+} */
+/* section{
+    text-align: center;
+} */
 h2 {
     color: green;
     font-weight: 2;
+}
+#initial{
+    grid-area: 1 / 4 / 2 / 5;
+}
+#menu{
+    grid-area: 2 / 4 / 3 / 5;
+    align-items: center;
+}
+.artist-header{
+    grid-area: 3 / 4 / 4 / 5;
+}
+.artist-columns{
+    grid-area: 4 / 1 / 5 / 8;
+}
+.artists{
+    grid-area: 3 / 1 / 5 / 8;
+}
+.tracks{
+    grid-area: 5 / 1 / 8 / 8;
 }
 .artist{
     display: flex;
