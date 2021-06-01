@@ -30,17 +30,14 @@ def getArtists(access_token, duration):
     else:
         payload = long_payload
     auth = BearerAuth(access_token)
-    print(auth)
+    # print(auth)
     artists = requests.get(artists_endpoint, params=payload, auth=auth)
     top_artists = []
-    images = []
-    print(artists.json())
     for i in artists.json().get("items"):
         artist = i.get("name")
         image = i.get("images")[0].get("url")
         curr = [artist, image]
         top_artists.append(curr)
-        # images.append(image)
     return top_artists
 
 def getTracks(access_token, duration):
@@ -50,21 +47,20 @@ def getTracks(access_token, duration):
         payload = mid_payload
     else:
         payload = long_payload
-    tracks = requests.get(tracks_endpoint, params=payload, auth=BearerAuth(access_token))
+    auth = BearerAuth(access_token)
+    tracks = requests.get(tracks_endpoint, params=payload, auth=auth)
     top_tracks = []
-    images = []
-    # print(tracks.json())
     for i in tracks.json().get("items"):
         track = i.get("name")
         image = i.get('album').get('images')[0].get("url")
         curr = [track, image]
         top_tracks.append(curr)
-        # images.append(image)
     return top_tracks
 
 if __name__ == "__main__":
-    print(getArtists())
-    print(getTracks())
+    pass
+    # print(getArtists())
+    # print(getTracks())
 
 # artist_file = open('top_artists.txt', 'w')
 # track_file = open('top_tracks.txt', 'w')
