@@ -20,20 +20,17 @@ def homepage():
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
     code = request.args.get('code')
-    print("code: ", code)
     auth_token_url = f"https://accounts.spotify.com/api/token"
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        "redirect_uri":"http://127.0.0.1:5000/short/",
-        # "redirect_uri":"https://spotipy1.herokuapp.com/short/",
+        # "redirect_uri":"http://127.0.0.1:5000/short/",
+        "redirect_uri":"https://spotipy1.herokuapp.com/short/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
     res_body = res.json()
-    print("res: ", res_body)
     token = res_body.get("access_token")
-    print("token: ", token)
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
     session["toke"] = token
@@ -46,8 +43,8 @@ def medium():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        "redirect_uri":"http://127.0.0.1:5000/medium/",
-        # "redirect_uri":"https://spotipy1.herokuapp.com/medium/",
+        # "redirect_uri":"http://127.0.0.1:5000/medium/",
+        "redirect_uri":"https://spotipy1.herokuapp.com/medium/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -65,8 +62,8 @@ def longs():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        "redirect_uri":"http://127.0.0.1:5000/long/",
-        # "redirect_uri":"https://spotipy1.herokuapp.com/long/",
+        # "redirect_uri":"http://127.0.0.1:5000/long/",
+        "redirect_uri":"https://spotipy1.herokuapp.com/long/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -79,36 +76,3 @@ def longs():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     auth_url = 'https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults%2F&scope=user-top-read'
-#     # auth_url = 'http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fresults%2F&scope=user-top-read'
-#     return redirect(auth_url)
-
-# @app.route('/results/', methods=['GET', 'POST'])
-# def results():
-#     print(request.args)
-#     code = request.args.get('code')
-#     # print("code: ", code)
-#     auth_token_url = f"https://accounts.spotify.com/api/token"
-#     res = requests.post(auth_token_url, data={
-#         "grant_type":"authorization_code",
-#         "code":code,
-#         # "redirect_uri":"http://127.0.0.1:5000/results/",
-#         "redirect_uri":"https://spotipy1.herokuapp.com/results/",
-#         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
-#         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
-#         })
-#     res_body = res.json()
-#     # res.headers.add('Access-Control-Allow-Headers',
-#     #                      "Origin, X-Requested-With, Content-Type, Accept, x-auth")
-#     print("res: ", res.json())
-#     token = res_body.get("access_token")
-#     # res.set_cookie('access_token', session["toke"])
-#     print("token: ", code)
-#     # print("token: ", session['toke'])
-#     # artists = getArtists(session["toke"])
-#     # tracks = getTracks(session["toke"])
-#     return render_template('auth.html')
