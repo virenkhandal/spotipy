@@ -35,6 +35,8 @@ def getArtists(access_token, duration):
     top_artists = []
     for i in artists.json().get("items"):
         artist = i.get("name")
+        images_endpoint = i.get("images")
+        print(images_endpoint)
         image = i.get("images")[0].get("url")
         curr = [artist, image]
         top_artists.append(curr)
