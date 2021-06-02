@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: 7.5% 17% 17% 17% 17% 17% 7.5%;
-    grid-template-rows: 2% 3% 2% 20% 20% 5% 20% 20% 5%;
+    grid-template-columns: 7.5% 15% 15% 15% 15% 15% 7.5%;
+    grid-template-rows: 2% 3% 2% 15% 15% 5% 15% 15% 5%;
     row-gap: 10px;
     column-gap: 10px;
     width: 100vw;
@@ -16,9 +16,15 @@ img {
     /* max-height: 100%; */
     /* object-fit: cover; */
     max-height: 250px;
-    /* margin-left: 5%; */
     display: block;
     margin: auto;
+}
+.artists{
+    text-align: center;
+    /* border: 1px black; */
+}
+.tracks{
+    text-align: center;
 }
 #bruh{
     width: 100%;
