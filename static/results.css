@@ -13,8 +13,12 @@ img {
     width: 90%;
     height: auto;
     overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
+    /* max-height: 100%; */
+    /* object-fit: cover; */
+    max-height: 250px;
+    /* margin-left: 5%; */
+    display: block;
+    margin: auto;
 }
 /* .artists{
     width: 90%;
@@ -23,6 +27,11 @@ img {
     max-height: 100%;
     object-fit: cover;
 } */
+#bruh{
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+}
 h2 {
     color: green;
     font-weight: 2;
@@ -45,6 +54,7 @@ h2 {
 }
 #artist-1{
     grid-area: 4 / 2 / 5 / 3;
+    align-items: center;
     width: 90%;
     height: auto;
     overflow: hidden;
