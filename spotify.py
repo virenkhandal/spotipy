@@ -56,7 +56,9 @@ def getTracks(access_token, duration):
     for i in tracks.json().get("items"):
         track = i.get("name")
         image = i.get('album').get('images')[0].get("url")
-        curr = [track, image]
+        # print(i.get('external_urls'))
+        link = i.get('external_urls').get('spotify')
+        curr = [track, image, link]
         top_tracks.append(curr)
     return top_tracks
 
