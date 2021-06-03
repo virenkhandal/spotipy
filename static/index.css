@@ -18,7 +18,8 @@
 #title{
         
     /* fonts */
-    font-family: 'Pacifico', cursive;
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Rock Salt', cursive;
     /* -webkit-text-stroke: 1px black; */
     color: white;
     font-size: 100px;
