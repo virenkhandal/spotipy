@@ -14,6 +14,9 @@
 
     width: 100vw;
     height: 200vh;
+
+    background-color: #D3FAD9;
+    font-family: 'Montserrat', sans-serif;
 }
 #title{
         
@@ -29,7 +32,9 @@
     /* font-family: 'Pacifico', cursive; */
     /* -webkit-text-stroke: 1px black; */
     /* color: white; */
-    margin-bottom: 15%
+    margin-bottom: 15%;
+    font-family: 'Montserrat', sans-serif;
+    /* background-color: #D3FAD9; */
 }
 #title-section{
     /* height: 100%; */
@@ -91,12 +96,14 @@
 
 #try-now{
     margin-bottom: 5%;
+    font-family: 'Montserrat', sans-serif;
 }
 button{
-    background-color: #4CAF50;
+    background-color: #1DB954;
     width:130px;
     border: 2 black;
-    color: white;
+    color: #191414;
+    font-family: 'Montserrat', sans-serif;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -106,6 +113,7 @@ button{
     margin-right: 44px;
     margin-left: 44px;
     border-radius: 50px;
+    font-weight: bolder;
 }
 
 a:visited{
@@ -117,6 +125,6 @@ h1{
 }
 h6{
     display: inline;
-    margin-left: 3.2%;
-    margin-right: 3.2%;
+    margin-left: 3.25%;
+    margin-right: 3.25%;
 }

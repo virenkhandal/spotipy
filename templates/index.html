@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="../static/index.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
   <body>
     
     <div class="container">
@@ -43,7 +46,7 @@
                 targets: '#wrapt path',
                 strokeDashoffset: [anime.setDashoffset, 0],
                 easing: 'easeInOutSine',
-                duration: 6000,
+                duration: 3000,
                 delay: function(el, i) { return i * 50 },
                 direction: 'alternate',
                 loop: true
@@ -58,27 +61,25 @@
 
     
     <div id="summary">
-      <h2> <strong> What is Wrapt? </strong></h2>
+      <h2> <strong style="font-weight: bolder;"> What is Wrapt? </strong></h2>
       <br/>
-      <h4>Wrapt is an extension built on Spotify to allow users to see their most
-        listened to artists and tracks over various periods of time.</h4>
+      <h3>Wrapt is an extension built on Spotify to allow users to see their most
+        listened to artists and tracks over various periods of time.</h3>
     </div>
 
     <div id="try-now">
-      <h3><strong> Try it now!</strong></h3>
+      <h2><strong style="font-weight: bolder;"> Try it now!</strong></h2>
       <!-- <br/> -->
       <h3>Choose the time frame you want to learn more about!</h3>
     </div>
-  <!-- <div id="buttons"> -->
-    <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
+    <!-- <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
     <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fmedium%2F';"> Medium </button>
-    <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button>
+    <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button> -->
 
 
-    <!-- <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
+    <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
     <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fmedium%2F&scope=user-top-read';"> Medium </button>
-    <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button> -->
-    <!-- </div> -->
+    <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button>
     <div id="captions">
       <h6>Past 1 month</h6>
       <h6>Past 3 months</h6>
