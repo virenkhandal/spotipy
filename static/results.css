@@ -1,7 +1,7 @@
 .container {
     display: grid;
-    grid-template-columns: 7.5% 15% 15% 15% 15% 15% 7.5%;
-    grid-template-rows: 5% 3% 5% 15% 15% 5% 15% 15% 5%;
+    grid-template-columns: 5% 18% 18% 18% 18% 18% 5%;
+    grid-template-rows: 5% 3% 5% 18% 18% 5% 18% 18% 5%;
     row-gap: 10px;
     column-gap: 10px;
     width: 100vw;
@@ -42,120 +42,6 @@ h2 {
 .artist-columns{
     grid-area: 4 / 1 / 5 / 8;
 }
-#artist-1{
-    grid-area: 4 / 2 / 5 / 3;
-    align-items: center;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-2{
-    grid-area: 4 / 3 / 5 / 4;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-3{
-    grid-area: 4 / 4 / 5 / 5;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-4{
-    grid-area: 4 / 5 / 5 / 6;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-5{
-    grid-area: 4 / 6 / 5 / 7;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-6{
-    grid-area: 5 / 2 / 6 / 3;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-7{
-    grid-area: 5 / 3 / 6 / 4;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-8{
-    grid-area: 5 / 4 / 6 / 5;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-9{
-    grid-area: 5 / 5 / 6 / 6;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-#artist-10{
-    grid-area: 5 / 6 / 6 / 7;
-    width: 90%;
-    height: auto;
-    overflow: hidden;
-    max-height: 100%;
-    object-fit: cover;
-}
-
-/* asdhfabsdf */
-
-#track-1{
-    grid-area: 7 / 2 / 8 / 3;
-}
-#track-2{
-    grid-area: 7 / 3 / 8 / 4;
-}
-#track-3{
-    grid-area: 7 / 4 / 8 / 5;
-}
-#track-4{
-    grid-area: 7 / 5 / 8 / 6;
-}
-#track-5{
-    grid-area: 7 / 6 / 8 / 7;
-}
-#track-6{
-    grid-area: 8 / 2 / 9 / 3;
-}
-#track-7{
-    grid-area: 8 / 3 / 9 / 4;
-}
-#track-8{
-    grid-area: 8 / 4 / 9 / 5;
-}
-#track-9{
-    grid-area: 8 / 5 / 9 / 6;
-}
-#track-10{
-    grid-area: 8 / 6 / 9 / 7;
-}
 
 .track-header{
     grid-area: 6 / 3 / 7 / 6;
@@ -164,10 +50,6 @@ h2 {
 .track-columns{
     grid-area: 7 / 1 / 8 / 8;
 }
-#track-1
-/* .artists{
-    grid-area: 3 / 1 / 5 / 8;
-} */
 .tracks{
     grid-area: 5 / 1 / 8 / 8;
 }
@@ -204,7 +86,7 @@ h2 {
     display: flex;
     grid-area: 4 / 2 / 5 / 7;
     /* align-items: center; */
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 .col{
     flex: 1;
