@@ -61,10 +61,6 @@ h2 {
     align-content: center;
 }
 .artist-name{
-    /* padding-top: 25px; */
-    /* padding-bottom: 25px; */
-    /* margin-left: 10px; */
-    /* margin-right: 60px; */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -75,24 +71,13 @@ h2 {
     margin-bottom: 10px;
     align-content: center;
 }
-/* .track-name{
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin-left: 10px;
-    margin-right: 60px;
-} */
-
 .flex-grid-artists-1{
     display: flex;
     grid-area: 4 / 2 / 5 / 7;
-    /* align-items: center; */
     margin-bottom: 3%;
 }
 .col{
     flex: 1;
-    /* background-color: whitesmoke; */
-    /* border-style: solid; */
-    /* border-width: 1px; */
     gap: 10px;
     margin-right: 10px;
     text-align: center;
@@ -108,7 +93,6 @@ h2 {
 .flex-grid-tracks-1{
     display: flex;
     grid-area: 7 / 2 / 8 / 7;
-    /* align-items: center; */
     margin-bottom: 2%;
 }
 
@@ -146,11 +130,4 @@ img{
 .col:after > .front{
     visibility: hidden;
 }
-/* .front .back{
-    position: relative;
-  }
 
-.back:hover{
-    transform: rotateY(180deg);
-    visibility: hidden;
-} */
