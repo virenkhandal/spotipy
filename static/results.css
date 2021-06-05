@@ -91,11 +91,13 @@ h2 {
 .col{
     flex: 1;
     /* background-color: whitesmoke; */
-    /* border-style: solid; */
-    /* border-width: 1px; */
+    border-style: solid;
+    border-width: 1px;
     gap: 10px;
     margin-right: 10px;
     text-align: center;
+    perspective: 1000px;
+    background-image: radial-gradient(#00b09b, #96c93d);
 }
 .flex-grid-artists-2{
     display: flex;
@@ -106,7 +108,7 @@ h2 {
 .flex-grid-tracks-1{
     display: flex;
     grid-area: 7 / 2 / 8 / 7;
-    align-items: center;
+    /* align-items: center; */
     margin-bottom: 2%;
 }
 
@@ -123,6 +125,27 @@ img{
     overflow: hidden;
 }
 
+.back{
+    visibility: hidden;
+}
+.col:hover {
+    background-image: radial-gradient(white, white);
+}
+.col:hover > .back{
+    visibility: visible;
+}
+
+.col:hover > .front{
+    visibility: hidden;
+}
+
+.col:after > .back{
+    visibility: visible;
+}
+
+.col:after > .front{
+    visibility: hidden;
+}
 /* .front .back{
     position: relative;
   }
