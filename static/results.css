@@ -103,7 +103,7 @@ h2 {
 }
 img{
     width: 100%;
-    /* height: 100%; */
+    /* height: 50%; */
     object-fit: cover;
     object-position: center center;
     overflow: hidden;
@@ -123,11 +123,10 @@ img{
     visibility: hidden;
 }
 
-.col:after > .back{
-    visibility: visible;
-}
-
-.col:after > .front{
+.col > .permanent{
     visibility: hidden;
 }
 
+.col > .gone{
+    visibility: visible;
+}
