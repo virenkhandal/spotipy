@@ -6,13 +6,11 @@
     column-gap: 10px;
     width: 100vw;
     height: 100vw;
-    /* align-items: center; */
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
 }
 .artists{
     text-align: center;
-    /* border: 1px black; */
 }
 .tracks{
     text-align: center;
@@ -112,14 +110,7 @@ img{
 .back{
     visibility: hidden;
 }
-/* .col:hover {
-    background-image: radial-gradient(white, white);
-} 
-.col:hover > .back{
-    visibility: visible;
-} */
 
 .col > .permanent{
-    /* visibility: hidden; */
     background-image: radial-gradient(white, white);
 }
