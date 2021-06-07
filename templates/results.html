@@ -5,6 +5,8 @@
   </head>
   <body>
     <div class="container">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <section id="initial">
       <h1 style="font-family: 'Kaushan Script', cursive;">Wrapt</h1>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,16 +21,18 @@
 
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+      
     </section>
     <section id="menu">
-      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
+      <!-- <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
       <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fmedium%2F';"> Medium </button>
-      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button>
+      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button> -->
 
 
-      <!-- <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
+      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
       <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fmedium%2F&scope=user-top-read';"> Medium </button>
-      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button> -->
+      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button>
     </section>
 
     <div class="artist-header">
@@ -40,14 +44,9 @@
       <strong><h2 class="artist-header">Top artists for the past year</h2></strong>
       {% endif %}
     </div>
-    <script>
-      $(".col").one("mouseover", function() {
-        $("#artist").addClass('permanent');
-        $("#old").addClass('gone');
-      });
-    </script>
+    
     <div class="flex-grid-artists-1">
-      <div class="col">
+      <div id="card" class="col">
         <div id="old" class="front">
           <h1> 1 </h1>
         </div>
@@ -56,7 +55,12 @@
           <h6 class="artist-name"><a target="_blank" href={{artists[0][2]}}>{{artists[0][0]}}</a></h6>
         </div>
       </div>
-
+      <script>
+        $("#card").flip({
+          axis: 'y',
+          trigger: 'hover'
+        });
+      </script>
       <div class="col">
         <div class="front">
           <h1> 2 </h1>
