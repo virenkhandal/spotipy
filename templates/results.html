@@ -120,78 +120,184 @@
         });
       </script>
 
-      <div class="col">
+      <div id="card4" class="col">
         <div class="front">
           <h1> 4 </h1>
         </div>
-        <div class="back">
+        <div id="artist4" class="back">
           <a href={{artists[3][2]}} target="_blank"><img src={{artists[3][1]}} alt={{ artists[3][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[3][2]}}>{{artists[3][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify4(){
+          $("#artist4").addClass("permanent");
+          $("#artist4").removeClass("back");
+          $("#card4").off(".flip");
+        }
+        $("#card4").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card4").on('flip:done',function(){
+          permify4();
+        });
+      </script>
 
-      <div class="col">
+      <div id="card5" class="col">
         <div class="front">
           <h1> 5 </h1>
         </div>
-        <div class="back">
+        <div id="artist5" class="back">
           <a href={{artists[4][2]}} target="_blank"><img src={{artists[4][1]}} alt={{ artists[4][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[4][2]}}>{{artists[4][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify5(){
+          $("#artist5").addClass("permanent");
+          $("#artist5").removeClass("back");
+          $("#card5").off(".flip");
+        }
+        $("#card5").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card5").on('flip:done',function(){
+          permify5();
+        });
+      </script>
 
     </div>
 
     <div class="flex-grid-artists-2">
-      <div class="col">
+      <div id="card6" class="col">
         <div class="front">
           <h1> 6 </h1>
         </div>
-        <div class="back">
+        <div id="artist6" class="back">
           <a href={{artists[5][2]}} target="_blank"><img src={{artists[5][1]}} alt={{ artists[5][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[5][2]}}>{{artists[5][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify6(){
+          $("#artist6").addClass("permanent");
+          $("#artist6").removeClass("back");
+          $("#card6").off(".flip");
+        }
+        $("#card6").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card6").on('flip:done',function(){
+          permify6();
+        });
+      </script>
 
-      <div class="col">
+      <div id="card7" class="col">
         <div class="front">
           <h1> 7 </h1>
         </div>
-        <div class="back">
+        <div id="artist7" class="back">
           <a href={{artists[6][2]}} target="_blank"><img src={{artists[6][1]}} alt={{ artists[6][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[6][2]}}>{{artists[6][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify7(){
+          $("#artist7").addClass("permanent");
+          $("#artist7").removeClass("back");
+          $("#card7").off(".flip");
+        }
+        $("#card7").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card7").on('flip:done',function(){
+          permify7();
+        });
+      </script>
 
-      <div class="col">
+      <div id="card8" class="col">
         <div class="front">
           <h1> 8 </h1>
         </div>
-        <div class="back">
+        <div id="artist8" class="back">
           <a href={{artists[7][2]}} target="_blank"><img src={{artists[7][1]}} alt={{ artists[7][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[7][2]}}>{{artists[7][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify8(){
+          $("#artist8").addClass("permanent");
+          $("#artist8").removeClass("back");
+          $("#card8").off(".flip");
+        }
+        $("#card8").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card8").on('flip:done',function(){
+          permify8();
+        });
+      </script>
 
-      <div class="col">
+      <div id="card9" class="col">
         <div class="front">
           <h1> 9 </h1>
         </div>
-        <div class="back">
+        <div id="artist9" class="back">
           <a href={{artists[8][2]}} target="_blank"><img src={{artists[8][1]}} alt={{ artists[8][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[8][2]}}>{{artists[8][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify9(){
+          $("#artist9").addClass("permanent");
+          $("#artist9").removeClass("back");
+          $("#card9").off(".flip");
+        }
+        $("#card9").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card9").on('flip:done',function(){
+          permify9();
+        });
+      </script>
 
-      <div class="col">
+      <div id="card10" class="col">
         <div class="front">
           <h1> 10 </h1>
         </div>
-        <div class="back">
+        <div id="artist10" class="back">
           <a href={{artists[9][2]}} target="_blank"><img src={{artists[9][1]}} alt={{ artists[9][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[9][2]}}>{{artists[9][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify10(){
+          $("#card10").off(".flip");
+          $("#artist10").addClass("permanent");
+          $("#artist10").removeClass("back");
+          $("#card10").flip(true);
+        }
+        $("#card10").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 100
+        });
+        $("#card10").on('flip:done',function(){
+          permify10();
+        });
+      </script>
     </div>
 
     <div class="track-header">
