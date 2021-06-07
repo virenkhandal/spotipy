@@ -320,111 +320,268 @@
     </div>
 
     <div class="flex-grid-tracks-1">
-      <div class="col">
-        <div class="front">
+      <div id="track_card" class="col">
+        <div id="old" class="front">
           <h1> 1 </h1>
         </div>
-        <div class="back">
+        <div id="track" class="back">
           <a href={{tracks[0][2]}} target="_blank"><img src={{tracks[0][1]}} alt={{ tracks[0][1] }} width="200" height="200"/></a>
           <h6 class="track-name"><a target="_blank" href={{tracks[0][2]}}>{{tracks[0][0]}}</a></h6>
         </div>
       </div>
-
-      <div class="col">
-        <div class="front">
+      <script>
+        function track_permify(){
+          $("#track").addClass("permanent");
+          $("#track").removeClass("back");
+          $("#track_card").off(".flip");
+          $("#track_card").flip(true);
+        }
+        $("#track_card").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 100
+        });
+        $("#track_card").on('flip:done',function(){
+          track_permify();
+        });
+      </script>
+      <div id="track_card2" class="col">
+        <div id="old" class="front">
           <h1> 2 </h1>
         </div>
-        <div class="back">
+        <div id="track2" class="back">
           <a href={{tracks[1][2]}} target="_blank"><img src={{tracks[1][1]}} alt={{ tracks[1][1] }} width="200" height="200"/></a>
           <h6 class="track-name"><a target="_blank" href={{tracks[1][2]}}>{{tracks[1][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify2(){
+          $("#track2").addClass("permanent");
+          $("#track2").removeClass("back");
+          $("#track_card2").off(".flip");
+          $("#track_card2").flip(true);
+        }
+        $("#track_card2").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card2").on('flip:done',function(){
+          track_permify2();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card3" class="col">
         <div class="front">
           <h1> 3 </h1>
         </div>
-        <div class="back">
+        <div id="track3" class="back">
           <a href={{tracks[2][2]}} target="_blank"><img src={{tracks[2][1]}} alt={{ tracks[2][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[2][2]}}>{{tracks[2][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify3(){
+          $("#track3").addClass("permanent");
+          $("#track3").removeClass("back");
+          $("#track_card3").off(".flip");
+          $("#track_card3").flip(true);
+        }
+        $("#track_card3").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card3").on('flip:done',function(){
+          track_permify3();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card4" class="col">
         <div class="front">
           <h1> 4 </h1>
         </div>
-        <div class="back">
+        <div id="track4" class="back">
           <a href={{tracks[3][2]}} target="_blank"><img src={{tracks[3][1]}} alt={{ tracks[3][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[3][2]}}>{{tracks[3][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify4(){
+          $("#track4").addClass("permanent");
+          $("#track4").removeClass("back");
+          $("#track_card4").off(".flip");
+          $("#track_card4").flip(true);
+        }
+        $("#track_card4").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card4").on('flip:done',function(){
+          track_permify4();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card5" class="col">
         <div class="front">
           <h1> 5 </h1>
         </div>
-        <div class="back">
+        <div id="track5" class="back">
           <a href={{tracks[4][2]}} target="_blank"><img src={{tracks[4][1]}} alt={{ tracks[4][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[4][2]}}>{{tracks[4][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify5(){
+          $("#track5").addClass("permanent");
+          $("#track5").removeClass("back");
+          $("#track_card5").off(".flip");
+          $("#track_card5").flip(true);
+        }
+        $("#track_card5").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card5").on('flip:done',function(){
+          track_permify5();
+        });
+      </script>
 
     </div>
 
     <div class="flex-grid-tracks-2">
-      <div class="col">
+      <div id="track_card6" class="col">
         <div class="front">
           <h1> 6 </h1>
         </div>
-        <div class="back">
+        <div id="track6" class="back">
           <a href={{tracks[5][2]}} target="_blank"><img src={{tracks[5][1]}} alt={{ tracks[5][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[5][2]}}>{{tracks[5][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify6(){
+          $("#track6").addClass("permanent");
+          $("#track6").removeClass("back");
+          $("#track_card6").off(".flip");
+          $("#track_card6").flip(true);
+        }
+        $("#track_card6").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card6").on('flip:done',function(){
+          track_permify6();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card7" class="col">
         <div class="front">
           <h1> 7 </h1>
         </div>
-        <div class="back">
+        <div id="track7" class="back">
           <a href={{tracks[6][2]}} target="_blank"><img src={{tracks[6][1]}} alt={{ tracks[6][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[6][2]}}>{{tracks[6][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify7(){
+          $("#track7").addClass("permanent");
+          $("#track7").removeClass("back");
+          $("#track_card7").off(".flip");
+          $("#track_card7").flip(true);
+        }
+        $("#track_card7").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card7").on('flip:done',function(){
+          track_permify7();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card8" class="col">
         <div class="front">
           <h1> 8 </h1>
         </div>
-        <div class="back">
+        <div id="track8" class="back">
           <a href={{tracks[7][2]}} target="_blank"><img src={{tracks[7][1]}} alt={{ tracks[7][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[7][2]}}>{{tracks[7][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify8(){
+          $("#track8").addClass("permanent");
+          $("#track8").removeClass("back");
+          $("#track_card8").off(".flip");
+          $("#track_card8").flip(true);
+        }
+        $("#track_card8").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card8").on('flip:done',function(){
+          track_permify8();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card9" class="col">
         <div class="front">
           <h1> 9 </h1>
         </div>
-        <div class="back">
+        <div id="track9" class="back">
           <a href={{tracks[8][2]}} target="_blank"><img src={{tracks[8][1]}} alt={{ tracks[8][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[8][2]}}>{{tracks[8][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify9(){
+          $("#track9").addClass("permanent");
+          $("#track9").removeClass("back");
+          $("#track_card9").off(".flip");
+          $("#track_card9").flip(true);
+        }
+        $("#track_card9").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 300
+        });
+        $("#track_card9").on('flip:done',function(){
+          track_permify9();
+        });
+      </script>
 
-      <div class="col">
+      <div id="track_card10" class="col">
         <div class="front">
           <h1> 10 </h1>
         </div>
-        <div class="back">
+        <div id="track10" class="back">
           <a href={{tracks[9][2]}} target="_blank"><img src={{tracks[9][1]}} alt={{ tracks[9][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[9][2]}}>{{tracks[9][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function track_permify10(){
+          $("#track_card10").off(".flip");
+          $("#track10").addClass("permanent");
+          $("#track10").removeClass("back");
+          $("#track_card10").flip(true);
+        }
+        $("#track_card10").flip({
+          axis: 'y',
+          trigger: 'hover',
+          speed: 100
+        });
+        $("#track_card10").on('flip:done',function(){
+          track_permify10();
+        });
+      </script>
     </div>
-    
-  </div>
   
   </body>
 </html>
