@@ -112,21 +112,14 @@ img{
 .back{
     visibility: hidden;
 }
-.col:hover {
+/* .col:hover {
     background-image: radial-gradient(white, white);
 } 
 .col:hover > .back{
     visibility: visible;
-}
-
-/* .col:hover > .front{
-    visibility: hidden;
 } */
 
-/* .col > .permanent{
-    visibility: hidden;
+.col > .permanent{
+    /* visibility: hidden; */
+    background-image: radial-gradient(white, white);
 }
-
-.col > .gone{
-    visibility: visible;
-} */

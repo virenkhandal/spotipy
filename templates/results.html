@@ -25,14 +25,14 @@
       
     </section>
     <section id="menu">
-      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
+      <!-- <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
       <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fmedium%2F';"> Medium </button>
-      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button>
+      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button> -->
 
 
-      <!-- <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
+      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
       <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fmedium%2F&scope=user-top-read';"> Medium </button>
-      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button> -->
+      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button>
     </section>
 
     <div class="artist-header">
@@ -56,30 +56,69 @@
         </div>
       </div>
       <script>
-        $("#col").flip({
+        function permify(){
+          $("#artist").addClass("permanent");
+          $("#artist").removeClass("back");
+          $("#card").off(".flip");
+        }
+        $("#card").flip({
           axis: 'y',
-          trigger: 'hover'
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card").on('flip:done',function(){
+          permify();
         });
       </script>
-      <div class="col">
-        <div class="front">
+      <div id="card2" class="col">
+        <div id="old" class="front">
           <h1> 2 </h1>
         </div>
-        <div class="back">
+        <div id="artist2" class="back">
           <a href={{artists[1][2]}} target="_blank"><img src={{artists[1][1]}} alt={{ artists[1][1] }} width="200" height="200"/></a>
           <h6 class="artist-name"><a target="_blank" href={{artists[1][2]}}>{{artists[1][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify2(){
+          $("#artist2").addClass("permanent");
+          $("#artist2").removeClass("back");
+          $("#card2").off(".flip");
+        }
+        $("#card2").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card2").on('flip:done',function(){
+          permify2();
+        });
+      </script>
 
-      <div class="col">
+      <div id="card3" class="col">
         <div class="front">
           <h1> 3 </h1>
         </div>
-        <div class="back">
+        <div id="artist3" class="back">
           <a href={{artists[2][2]}} target="_blank"><img src={{artists[2][1]}} alt={{ artists[2][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[2][2]}}>{{artists[2][0]}}</a></h6>
         </div>
       </div>
+      <script>
+        function permify3(){
+          $("#artist3").addClass("permanent");
+          $("#artist3").removeClass("back");
+          $("#card3").off(".flip");
+        }
+        $("#card3").flip({
+          axis: 'y',
+          trigger: 'click',
+          speed: 300
+        });
+        $("#card3").on('flip:done',function(){
+          permify3();
+        });
+      </script>
 
       <div class="col">
         <div class="front">
