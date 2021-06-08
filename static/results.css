@@ -14,7 +14,8 @@
     margin: 10px;
     text-align: center;
     perspective: 1000px;
-    background-image: radial-gradient(#00b09b, #1DB954);
+    /* background-image: radial-gradient(#00b09b, #1DB954); */
+    background-image: url("https://i.pinimg.com/originals/f4/52/a2/f452a2f4b634b3011e065da8eaf0a5c3.gif");
     border-width: 5px;
     border: 2 black;
 }
@@ -82,4 +83,21 @@ h1{
 
 .order{
     font-size: 36px;
+}
+.row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.col2{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.col2 > h6{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
 }
