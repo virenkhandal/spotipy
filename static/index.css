@@ -17,6 +17,7 @@
 
     background-color: #D3FAD9;
     font-family: 'Montserrat', sans-serif;
+    
 }
 a{
     color: black;
@@ -129,4 +130,13 @@ h6{
     display: inline;
     margin-left: 3.25%;
     margin-right: 3.25%;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.col{
+    text-align: center;
 }
