@@ -10,7 +10,7 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <section id="initial">
       <!-- <h1 style="font-family: 'Kaushan Script', cursive;"><a href="http://127.0.0.1:5000/">Wrapt</a></h1> -->
-      <h1 style="font-family: 'Kaushan Script', cursive;"><a href="http://spotipy1.herokuapp.com">Wrapt</a></h1>
+      <h1 style="font-family: 'Kaushan Script', cursive;"><a id="homepage" href="http://spotipy1.herokuapp.com">Wrapt</a></h1>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link rel="stylesheet" href="../static/results.css">
@@ -27,14 +27,14 @@
       
     </section>
     <section id="menu">
-      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
+      <!-- <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
       <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fmedium%2F';"> Medium </button>
-      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button>
+      <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Flong%2F';"> Long </button> -->
 
 
-      <!-- <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
+      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
       <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fmedium%2F&scope=user-top-read';"> Medium </button>
-      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button> -->
+      <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Flong%2F&scope=user-top-read';"> Long </button>
     </section>
 
     <div class="artist-header">
@@ -55,6 +55,7 @@
         <div id="artist" class="back">
           <a href={{artists[0][2]}} target="_blank"><img src={{artists[0][1]}} alt={{ artists[0][1] }} width="200" height="200"/></a>
           <h6 class="artist-name"><a target="_blank" href={{artists[0][2]}}>{{artists[0][0]}}</a></h6>
+          <h6> 1 </h6>
         </div>
       </div>
       <script>
@@ -80,6 +81,7 @@
         <div id="artist2" class="back">
           <a href={{artists[1][2]}} target="_blank"><img src={{artists[1][1]}} alt={{ artists[1][1] }} width="200" height="200"/></a>
           <h6 class="artist-name"><a target="_blank" href={{artists[1][2]}}>{{artists[1][0]}}</a></h6>
+          <h6> 2 </h6>
         </div>
       </div>
       <script>
@@ -106,6 +108,7 @@
         <div id="artist3" class="back">
           <a href={{artists[2][2]}} target="_blank"><img src={{artists[2][1]}} alt={{ artists[2][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[2][2]}}>{{artists[2][0]}}</a></h6>
+        <h6> 3 </h6>
         </div>
       </div>
       <script>
@@ -132,6 +135,7 @@
         <div id="artist4" class="back">
           <a href={{artists[3][2]}} target="_blank"><img src={{artists[3][1]}} alt={{ artists[3][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[3][2]}}>{{artists[3][0]}}</a></h6>
+        <h6> 4 </h6>
         </div>
       </div>
       <script>
@@ -158,6 +162,7 @@
         <div id="artist5" class="back">
           <a href={{artists[4][2]}} target="_blank"><img src={{artists[4][1]}} alt={{ artists[4][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[4][2]}}>{{artists[4][0]}}</a></h6>
+        <h6> 5 </h6>
         </div>
       </div>
       <script>
@@ -187,6 +192,7 @@
         <div id="artist6" class="back">
           <a href={{artists[5][2]}} target="_blank"><img src={{artists[5][1]}} alt={{ artists[5][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[5][2]}}>{{artists[5][0]}}</a></h6>
+        <h6> 6 </h6>
         </div>
       </div>
       <script>
@@ -213,6 +219,7 @@
         <div id="artist7" class="back">
           <a href={{artists[6][2]}} target="_blank"><img src={{artists[6][1]}} alt={{ artists[6][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[6][2]}}>{{artists[6][0]}}</a></h6>
+        <h6> 7 </h6>
         </div>
       </div>
       <script>
@@ -239,6 +246,7 @@
         <div id="artist8" class="back">
           <a href={{artists[7][2]}} target="_blank"><img src={{artists[7][1]}} alt={{ artists[7][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[7][2]}}>{{artists[7][0]}}</a></h6>
+        <h6> 8 </h6>
         </div>
       </div>
       <script>
@@ -265,6 +273,7 @@
         <div id="artist9" class="back">
           <a href={{artists[8][2]}} target="_blank"><img src={{artists[8][1]}} alt={{ artists[8][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[8][2]}}>{{artists[8][0]}}</a></h6>
+        <h6> 9 </h6>
         </div>
       </div>
       <script>
@@ -291,6 +300,7 @@
         <div id="artist10" class="back">
           <a href={{artists[9][2]}} target="_blank"><img src={{artists[9][1]}} alt={{ artists[9][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[9][2]}}>{{artists[9][0]}}</a></h6>
+        <h6> 10 </h6>
         </div>
       </div>
       <script>
@@ -329,6 +339,7 @@
         <div id="track" class="back">
           <a href={{tracks[0][2]}} target="_blank"><img src={{tracks[0][1]}} alt={{ tracks[0][1] }} width="200" height="200"/></a>
           <h6 class="track-name"><a target="_blank" href={{tracks[0][2]}}>{{tracks[0][0]}}</a></h6>
+          <h6> 1 </h6>
         </div>
       </div>
       <script>
@@ -354,6 +365,7 @@
         <div id="track2" class="back">
           <a href={{tracks[1][2]}} target="_blank"><img src={{tracks[1][1]}} alt={{ tracks[1][1] }} width="200" height="200"/></a>
           <h6 class="track-name"><a target="_blank" href={{tracks[1][2]}}>{{tracks[1][0]}}</a></h6>
+          <h6> 2 </h6>
         </div>
       </div>
       <script>
@@ -380,6 +392,7 @@
         <div id="track3" class="back">
           <a href={{tracks[2][2]}} target="_blank"><img src={{tracks[2][1]}} alt={{ tracks[2][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[2][2]}}>{{tracks[2][0]}}</a></h6>
+        <h6> 3 </h6>
         </div>
       </div>
       <script>
@@ -406,6 +419,7 @@
         <div id="track4" class="back">
           <a href={{tracks[3][2]}} target="_blank"><img src={{tracks[3][1]}} alt={{ tracks[3][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[3][2]}}>{{tracks[3][0]}}</a></h6>
+        <h6> 4 </h6>
         </div>
       </div>
       <script>
@@ -432,6 +446,7 @@
         <div id="track5" class="back">
           <a href={{tracks[4][2]}} target="_blank"><img src={{tracks[4][1]}} alt={{ tracks[4][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[4][2]}}>{{tracks[4][0]}}</a></h6>
+        <h6> 5 </h6>
         </div>
       </div>
       <script>
@@ -461,6 +476,7 @@
         <div id="track6" class="back">
           <a href={{tracks[5][2]}} target="_blank"><img src={{tracks[5][1]}} alt={{ tracks[5][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[5][2]}}>{{tracks[5][0]}}</a></h6>
+        <h6> 6 </h6>
         </div>
       </div>
       <script>
@@ -487,6 +503,7 @@
         <div id="track7" class="back">
           <a href={{tracks[6][2]}} target="_blank"><img src={{tracks[6][1]}} alt={{ tracks[6][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[6][2]}}>{{tracks[6][0]}}</a></h6>
+        <h6> 7 </h6>
         </div>
       </div>
       <script>
@@ -513,6 +530,7 @@
         <div id="track8" class="back">
           <a href={{tracks[7][2]}} target="_blank"><img src={{tracks[7][1]}} alt={{ tracks[7][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[7][2]}}>{{tracks[7][0]}}</a></h6>
+        <h6> 8 </h6>
         </div>
       </div>
       <script>
@@ -539,6 +557,7 @@
         <div id="track9" class="back">
           <a href={{tracks[8][2]}} target="_blank"><img src={{tracks[8][1]}} alt={{ tracks[8][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[8][2]}}>{{tracks[8][0]}}</a></h6>
+        <h6> 9 </h6>
         </div>
       </div>
       <script>
@@ -565,6 +584,7 @@
         <div id="track10" class="back">
           <a href={{tracks[9][2]}} target="_blank"><img src={{tracks[9][1]}} alt={{ tracks[9][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[9][2]}}>{{tracks[9][0]}}</a></h6>
+        <h6> 10 </h6>
         </div>
       </div>
       <script>

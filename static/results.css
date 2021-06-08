@@ -8,8 +8,9 @@
     height: 100vw;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
+    background-color: #D3FAD9;
 }
-a, a:hover{
+#homepage, #homepage:hover{
     color: black;
     text-decoration: none;
 }
@@ -116,5 +117,26 @@ img{
 }
 
 .col > .permanent{
-    background-image: radial-gradient(white, white);
+    background-image: radial-gradient(#D3FAD9, #D3FAD9);
+}
+button{
+    background-color: #1DB954;
+    width:130px;
+    border: 2 black;
+    color: #191414;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+    margin-right: 44px;
+    margin-left: 44px;
+    border-radius: 50px;
+    font-weight: bolder;
+}
+h6{
+    font-size: 24px;
+    margin-top: 10%;
 }
