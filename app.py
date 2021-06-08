@@ -43,8 +43,8 @@ def medium():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        # "redirect_uri":"http://127.0.0.1:5000/medium/",
-        "redirect_uri":"https://spotipy1.herokuapp.com/medium/",
+        "redirect_uri":"http://127.0.0.1:5000/medium/",
+        # "redirect_uri":"https://spotipy1.herokuapp.com/medium/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -62,8 +62,8 @@ def longs():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        # "redirect_uri":"http://127.0.0.1:5000/long/",
-        "redirect_uri":"https://spotipy1.herokuapp.com/long/",
+        "redirect_uri":"http://127.0.0.1:5000/long/",
+        # "redirect_uri":"https://spotipy1.herokuapp.com/long/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })

@@ -10,7 +10,7 @@
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <section id="initial">
       <!-- <h1 style="font-family: 'Kaushan Script', cursive;"><a href="http://127.0.0.1:5000/">Wrapt</a></h1> -->
-      <h1 style="font-family: 'Kaushan Script', cursive;"><a id="homepage" href="http://spotipy1.herokuapp.com">Wrapt</a></h1>
+      <h1 style="font-family: 'Kaushan Script', cursive; font-size: 64px;"><a id="homepage" href="http://spotipy1.herokuapp.com">Wrapt</a></h1>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
       <link rel="stylesheet" href="../static/results.css">
@@ -50,12 +50,12 @@
     <div class="flex-grid-artists-1">
       <div id="card" class="col">
         <div id="old" class="front">
-          <h1> 1 </h1>
+          <h1 class="one"> 1 </h1>
         </div>
         <div id="artist" class="back">
           <a href={{artists[0][2]}} target="_blank"><img src={{artists[0][1]}} alt={{ artists[0][1] }} width="200" height="200"/></a>
           <h6 class="artist-name"><a target="_blank" href={{artists[0][2]}}>{{artists[0][0]}}</a></h6>
-          <h6> 1 </h6>
+          <h6 class="one"> 1 </h6>
         </div>
       </div>
       <script>
@@ -76,12 +76,12 @@
       </script>
       <div id="card2" class="col">
         <div id="old" class="front">
-          <h1> 2 </h1>
+          <h1 class="two"> 2 </h1>
         </div>
         <div id="artist2" class="back">
           <a href={{artists[1][2]}} target="_blank"><img src={{artists[1][1]}} alt={{ artists[1][1] }} width="200" height="200"/></a>
           <h6 class="artist-name"><a target="_blank" href={{artists[1][2]}}>{{artists[1][0]}}</a></h6>
-          <h6> 2 </h6>
+          <h6 class="two"> 2 </h6>
         </div>
       </div>
       <script>
@@ -103,12 +103,12 @@
 
       <div id="card3" class="col">
         <div class="front">
-          <h1> 3 </h1>
+          <h1 class="three"> 3 </h1>
         </div>
         <div id="artist3" class="back">
           <a href={{artists[2][2]}} target="_blank"><img src={{artists[2][1]}} alt={{ artists[2][1] }} width="200" height="200"/></a>
         <h6 class="artist-name"><a target="_blank" href={{artists[2][2]}}>{{artists[2][0]}}</a></h6>
-        <h6> 3 </h6>
+        <h6 class="three"> 3 </h6>
         </div>
       </div>
       <script>
@@ -334,12 +334,12 @@
     <div class="flex-grid-tracks-1">
       <div id="track_card" class="col">
         <div id="old" class="front">
-          <h1> 1 </h1>
+          <h1 class="one"> 1 </h1>
         </div>
         <div id="track" class="back">
           <a href={{tracks[0][2]}} target="_blank"><img src={{tracks[0][1]}} alt={{ tracks[0][1] }} width="200" height="200"/></a>
           <h6 class="track-name"><a target="_blank" href={{tracks[0][2]}}>{{tracks[0][0]}}</a></h6>
-          <h6> 1 </h6>
+          <h6 class="one"> 1 </h6>
         </div>
       </div>
       <script>
@@ -360,12 +360,12 @@
       </script>
       <div id="track_card2" class="col">
         <div id="old" class="front">
-          <h1> 2 </h1>
+          <h1 class="two"> 2 </h1>
         </div>
         <div id="track2" class="back">
           <a href={{tracks[1][2]}} target="_blank"><img src={{tracks[1][1]}} alt={{ tracks[1][1] }} width="200" height="200"/></a>
           <h6 class="track-name"><a target="_blank" href={{tracks[1][2]}}>{{tracks[1][0]}}</a></h6>
-          <h6> 2 </h6>
+          <h6 class="two"> 2 </h6>
         </div>
       </div>
       <script>
@@ -387,12 +387,12 @@
 
       <div id="track_card3" class="col">
         <div class="front">
-          <h1> 3 </h1>
+          <h1 class="three"> 3 </h1>
         </div>
         <div id="track3" class="back">
           <a href={{tracks[2][2]}} target="_blank"><img src={{tracks[2][1]}} alt={{ tracks[2][1] }} width="200" height="200"/></a>
         <h6 class="track-name"><a target="_blank" href={{tracks[2][2]}}>{{tracks[2][0]}}</a></h6>
-        <h6> 3 </h6>
+        <h6 class="three"> 3 </h6>
         </div>
       </div>
       <script>

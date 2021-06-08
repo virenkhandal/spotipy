@@ -18,7 +18,10 @@
     background-color: #D3FAD9;
     font-family: 'Montserrat', sans-serif;
 }
-
+a{
+    color: black;
+    text-decoration: none;
+}
 #title{
         
     /* fonts */
@@ -44,7 +47,7 @@
     margin-bottom: 5%;
 
     /* parallax */
-    background-image: radial-gradient(#00b09b, #96c93d);
+    background-image: radial-gradient(#00b09b, #1DB954);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
