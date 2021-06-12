@@ -27,7 +27,7 @@
       
     </section>
     <section id="menu">
-    <div class="row2">
+    <!-- <div class="row2">
       <div class="col2">
         <button onclick="location.href='https://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&scope=user-top-read&redirect_uri=https%3A%2F%2Fspotipy1.herokuapp.com%2Fshort%2F';"> Short </button>
         <br>
@@ -45,10 +45,10 @@
         <br>
         <h6>Past 1 year</h6>
       </div>
-    </div>
+    </div> -->
     
 
-    <!-- <div class="row2">
+    <div class="row2">
       <div class="col2">
         <button onclick="location.href='http://accounts.spotify.com/authorize?client_id=61bb4c3ea3c24253a738bd8f34956191&response_type=code&redirect_uri=http%3A%2F%2F127.0.0.1%3A5000%2Fshort%2F&scope=user-top-read';"> Short </button>
         <br>
@@ -66,7 +66,12 @@
         <br>
         <h6>Past 1 year</h6>
       </div>
-    </div> -->
+    </div>
+
+    <div class="hover">
+      <h2> Hover over the cards to see your top artists/tracks! </h2>
+    </div>
+    
     </section>
 
     <div class="artist-header">
@@ -82,7 +87,7 @@
     <div class="row">
       <div id="card" class="col">
         <div id="old" class="front">
-          <h1 class="one order"> 1 </h1>
+          <h1 class="one order top"> 1 </h1>
         </div>
         <div id="artist" class="back">
           <a href={{artists[0][2]}} target="_blank"><img src={{artists[0][1]}} alt={{ artists[0][1] }} width="200" height="200"/></a>
@@ -108,7 +113,7 @@
       </script>
       <div id="card2" class="col">
         <div id="old" class="front">
-          <h1 class="two order"> 2 </h1>
+          <h1 class="two order top"> 2 </h1>
         </div>
         <div id="artist2" class="back">
           <a href={{artists[1][2]}} target="_blank"><img src={{artists[1][1]}} alt={{ artists[1][1] }} width="200" height="200"/></a>
@@ -135,7 +140,7 @@
 
       <div id="card3" class="col">
         <div class="front">
-          <h1 class="three order"> 3 </h1>
+          <h1 class="three order top"> 3 </h1>
         </div>
         <div id="artist3" class="back">
           <a href={{artists[2][2]}} target="_blank"><img src={{artists[2][1]}} alt={{ artists[2][1] }} width="200" height="200"/></a>
@@ -162,7 +167,7 @@
 
       <div id="card4" class="col">
         <div class="front">
-          <h1 class="order"> 4 </h1>
+          <h1 class="order top"> 4 </h1>
         </div>
         <div id="artist4" class="back">
           <a href={{artists[3][2]}} target="_blank"><img src={{artists[3][1]}} alt={{ artists[3][1] }} width="200" height="200"/></a>
@@ -189,7 +194,7 @@
 
       <div id="card5" class="col">
         <div class="front">
-          <h1 class="order"> 5 </h1>
+          <h1 class="order top"> 5 </h1>
         </div>
         <div id="artist5" class="back">
           <a href={{artists[4][2]}} target="_blank"><img src={{artists[4][1]}} alt={{ artists[4][1] }} width="200" height="200"/></a>
@@ -219,7 +224,7 @@
     <div class="row">
       <div id="card6" class="col">
         <div class="front">
-          <h1 class="order"> 6 </h1>
+          <h1 class="order top"> 6 </h1>
         </div>
         <div id="artist6" class="back">
           <a href={{artists[5][2]}} target="_blank"><img src={{artists[5][1]}} alt={{ artists[5][1] }} width="200" height="200"/></a>
@@ -246,7 +251,7 @@
 
       <div id="card7" class="col">
         <div class="front">
-          <h1 class="order"> 7 </h1>
+          <h1 class="order top"> 7 </h1>
         </div>
         <div id="artist7" class="back">
           <a href={{artists[6][2]}} target="_blank"><img src={{artists[6][1]}} alt={{ artists[6][1] }} width="200" height="200"/></a>
@@ -273,7 +278,7 @@
 
       <div id="card8" class="col">
         <div class="front">
-          <h1 class="order"> 8 </h1>
+          <h1 class="order top"> 8 </h1>
         </div>
         <div id="artist8" class="back">
           <a href={{artists[7][2]}} target="_blank"><img src={{artists[7][1]}} alt={{ artists[7][1] }} width="200" height="200"/></a>
@@ -300,7 +305,7 @@
 
       <div id="card9" class="col">
         <div class="front">
-          <h1 class="order"> 9 </h1>
+          <h1 class="order top"> 9 </h1>
         </div>
         <div id="artist9" class="back">
           <a href={{artists[8][2]}} target="_blank"><img src={{artists[8][1]}} alt={{ artists[8][1] }} width="200" height="200"/></a>
@@ -327,7 +332,7 @@
 
       <div id="card10" class="col">
         <div class="front">
-          <h1 class="order"> 10 </h1>
+          <h1 class="order top"> 10 </h1>
         </div>
         <div id="artist10" class="back">
           <a href={{artists[9][2]}} target="_blank"><img src={{artists[9][1]}} alt={{ artists[9][1] }} width="200" height="200"/></a>
@@ -366,7 +371,7 @@
     <div class="row">
       <div id="track_card" class="col">
         <div id="old" class="front">
-          <h1 class="one order" > 1 </h1>
+          <h1 class="one order top" > 1 </h1>
         </div>
         <div id="track" class="back">
           <a href={{tracks[0][2]}} target="_blank"><img src={{tracks[0][1]}} alt={{ tracks[0][1] }} width="200" height="200"/></a>
@@ -392,7 +397,7 @@
       </script>
       <div id="track_card2" class="col">
         <div id="old" class="front">
-          <h1 class="two order"> 2 </h1>
+          <h1 class="two order top"> 2 </h1>
         </div>
         <div id="track2" class="back">
           <a href={{tracks[1][2]}} target="_blank"><img src={{tracks[1][1]}} alt={{ tracks[1][1] }} width="200" height="200"/></a>
@@ -419,7 +424,7 @@
 
       <div id="track_card3" class="col">
         <div class="front">
-          <h1 class="three order"> 3 </h1>
+          <h1 class="three order top"> 3 </h1>
         </div>
         <div id="track3" class="back">
           <a href={{tracks[2][2]}} target="_blank"><img src={{tracks[2][1]}} alt={{ tracks[2][1] }} width="200" height="200"/></a>
@@ -446,7 +451,7 @@
 
       <div id="track_card4" class="col">
         <div class="front">
-          <h1 class="order"> 4 </h1>
+          <h1 class="order top"> 4 </h1>
         </div>
         <div id="track4" class="back">
           <a href={{tracks[3][2]}} target="_blank"><img src={{tracks[3][1]}} alt={{ tracks[3][1] }} width="200" height="200"/></a>
@@ -473,7 +478,7 @@
 
       <div id="track_card5" class="col">
         <div class="front">
-          <h1 class="order"> 5 </h1>
+          <h1 class="order top"> 5 </h1>
         </div>
         <div id="track5" class="back">
           <a href={{tracks[4][2]}} target="_blank"><img src={{tracks[4][1]}} alt={{ tracks[4][1] }} width="200" height="200"/></a>
@@ -503,7 +508,7 @@
     <div class="row">
       <div id="track_card6" class="col">
         <div class="front">
-          <h1 class="order"> 6 </h1>
+          <h1 class="order top"> 6 </h1>
         </div>
         <div id="track6" class="back">
           <a href={{tracks[5][2]}} target="_blank"><img src={{tracks[5][1]}} alt={{ tracks[5][1] }} width="200" height="200"/></a>
@@ -530,7 +535,7 @@
 
       <div id="track_card7" class="col">
         <div class="front">
-          <h1 class="order"> 7 </h1>
+          <h1 class="order top"> 7 </h1>
         </div>
         <div id="track7" class="back">
           <a href={{tracks[6][2]}} target="_blank"><img src={{tracks[6][1]}} alt={{ tracks[6][1] }} width="200" height="200"/></a>
@@ -557,7 +562,7 @@
 
       <div id="track_card8" class="col">
         <div class="front">
-          <h1 class="order"> 8 </h1>
+          <h1 class="order top"> 8 </h1>
         </div>
         <div id="track8" class="back">
           <a href={{tracks[7][2]}} target="_blank"><img src={{tracks[7][1]}} alt={{ tracks[7][1] }} width="200" height="200"/></a>
@@ -584,7 +589,7 @@
 
       <div id="track_card9" class="col">
         <div class="front">
-          <h1 class="order"> 9 </h1>
+          <h1 class="order top"> 9 </h1>
         </div>
         <div id="track9" class="back">
           <a href={{tracks[8][2]}} target="_blank"><img src={{tracks[8][1]}} alt={{ tracks[8][1] }} width="200" height="200"/></a>
@@ -611,7 +616,7 @@
 
       <div id="track_card10" class="col">
         <div class="front">
-          <h1 class="order"> 10 </h1>
+          <h1 class="order top"> 10 </h1>
         </div>
         <div id="track10" class="back">
           <a href={{tracks[9][2]}} target="_blank"><img src={{tracks[9][1]}} alt={{ tracks[9][1] }} width="200" height="200"/></a>

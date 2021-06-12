@@ -101,3 +101,12 @@ h2{
     font-family: 'Montserrat', sans-serif;
     font-weight:bolder;
 }
+.top{
+    color: white;
+    margin-top: 60%;
+    font-size: 48px;
+}
+.hover{
+    display: inline-block;
+    font-size: 24px;
+}
