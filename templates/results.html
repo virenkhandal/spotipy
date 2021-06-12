@@ -96,6 +96,13 @@
         </div>
       </div>
       <script>
+        
+        function permify(){
+          $("#artist").addClass("permanent");
+          $("#artist").removeClass("back");
+          $("#card").off(".flip");
+          $("#card").flip(true);
+        }
         var isMobile = false; //initiate as false
         // device detection
         if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -103,34 +110,7 @@
             isMobile = true;
         }
         if (isMobile == true){
-          $("#card").flip(true);
-          $("#card").off(".flip");
-          $("#card2").flip(true);
-          $("#card2").off(".flip");
-          $("#card3").flip(true);
-          $("#card3").off(".flip");
-          $("#card4").flip(true);
-          $("#card4").off(".flip");
-          $("#card5").flip(true);
-          $("#card5").off(".flip");
-          $("#card6").flip(true);
-          $("#card6").off(".flip");
-          $("#card7").flip(true);
-          $("#card7").off(".flip");
-          $("#card8").flip(true);
-          $("#card8").off(".flip");
-          $("#card9").flip(true);
-          $("#card9").off(".flip");
-          $("#card10").flip(true);
-          $("#card10").off(".flip");
-        }
-      </script>
-      <script>
-        function permify(){
-          $("#artist").addClass("permanent");
-          $("#artist").removeClass("back");
-          $("#card").off(".flip");
-          $("#card").flip(true);
+          permify();
         }
         $("#card").flip({
           axis: 'y',
