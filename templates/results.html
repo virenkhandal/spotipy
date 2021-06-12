@@ -111,16 +111,18 @@
         }
         if (isMobile == true){
           $("#card").flip();
-          // permify();
-        }
-        $("#card").flip({
-          axis: 'y',
-          trigger: 'hover',
-          speed: 100
-        });
-        $("#card").on('flip:done',function(){
           permify();
-        });
+        } else {
+          $("#card").flip({
+            axis: 'y',
+            trigger: 'hover',
+            speed: 100
+          });
+          $("#card").on('flip:done',function(){
+            permify();
+          });
+        }
+        
       </script>
       <div id="card2" class="col">
         <div id="old" class="front">
