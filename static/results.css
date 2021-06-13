@@ -49,6 +49,8 @@ body{
     background-color: #D3FAD9;
     text-align: center;
     overflow-wrap:normal;
+    
+    /* overflow: hidden; */
 }
 
 button{
@@ -110,4 +112,9 @@ h2{
 .hover{
     display: inline-block;
     font-size: 24px;
+}
+.track-name, .artist-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
