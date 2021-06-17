@@ -148,3 +148,8 @@ h6{
 svg{
     width: 100%;
 }
+#scroll{
+    /* position: absolute; */
+    margin-top: 14%;
+    font-family: 'Montserrat', sans-serif;
+}
