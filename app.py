@@ -9,6 +9,8 @@ import requests
 from flask import request
 from urlpath import URL
 import os
+import sys
+from PIL import Image, ImageDraw
 app = Flask(__name__)
 auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults'}
 app.secret_key = 'bruhbruhbruhbruh'
@@ -73,6 +75,14 @@ def longs():
     tracks = getTracks(token, "long")
     session["toke"] = token
     return render_template('results.html', artists=artists, tracks=tracks, duration="long")
+
+
+def render_ig():
+    with Image.open('/static/igstory.png') as im:
+        draw = ImageDraw.Draw(im)
+        one = 'Kid Cudi'
+        draw.text((5, 5), one)
+        im.show()
 
 if __name__ == '__main__':
     app.run(debug=True)
