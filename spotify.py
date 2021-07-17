@@ -1,4 +1,5 @@
 import spotipy, requests
+from PIL import Image, ImageDraw, ImageFont
 from spotipy.oauth2 import SpotifyClientCredentials
 # from private import client_id, secret, oauth
 import jinja2
@@ -66,6 +67,10 @@ def get_ig_story():
     image = Image.open("igstory.png")
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(r'/System/Library/Fonts/Supplemental/Arial.ttf', 50) 
+
+    # Process data from get_artists() and get_tracks()
+    
+
 
     # Text to write onto image
     time = "weeks"
