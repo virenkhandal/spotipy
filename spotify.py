@@ -70,17 +70,18 @@ def get_ig_story(duration, artists, tracks):
 
     # Text to write onto image
     time = duration
-    artist_one = concat(artists[0], font)
-    artist_two = concat(artists[1], font)
-    artist_three = concat(artists[2], font)
-    artist_four = concat(artists[3], font)
-    artist_five = concat(artists[4], font)
+    print(artists[0][0])
+    artist_one = concat(artists[0][0], font)
+    artist_two = concat(artists[1][0], font)
+    artist_three = concat(artists[2][0], font)
+    artist_four = concat(artists[3][0], font)
+    artist_five = concat(artists[4][0], font)
 
-    track_one = concat(tracks[0], font)
-    track_two = concat(tracks[1], font)
-    track_three = concat(tracks[2], font)
-    track_four = concat(tracks[3], font)
-    track_five = concat(tracks[4], font)
+    track_one = concat(tracks[0][0], font)
+    track_two = concat(tracks[1][0], font)
+    track_three = concat(tracks[2][0], font)
+    track_four = concat(tracks[3][0], font)
+    track_five = concat(tracks[4][0], font)
 
     # Drawing text on image
     draw.text((650, 200), time, fill="black", font=font, align="left")
@@ -104,7 +105,7 @@ def get_ig_story(duration, artists, tracks):
 
 def concat(text, font):
     split = text.split(" ")
-
+    artist_breakpoint = len(split)
     for i in range(len(split) + 1):
         size = font.getsize(' '.join(split[:i]) + " ...")
         if size[0] > 300:
