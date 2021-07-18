@@ -98,7 +98,7 @@ def get_ig_story(duration, artists, tracks):
     draw.text((670, 1595), track_four, fill="black", font=font, align="left")
     draw.text((670, 1735), track_five, fill="black", font=font, align="left")
 
-
+    print("bruh")
     # Display image
     image.show()
 
