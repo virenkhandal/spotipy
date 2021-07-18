@@ -68,27 +68,20 @@ def get_ig_story(duration, artists, tracks):
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(r'/System/Library/Fonts/Supplemental/Arial.ttf', 50) 
 
-    # Process data from get_artists() and get_tracks()
-    
-
-
     # Text to write onto image
-    time = "weeks"
-    artist_one = artists[0]
-    artist_two = artists[1]
-    artist_three = artists[2]
-    artist_four = artists[3]
-    artist_five = artists[4]
+    time = duration
+    artist_one = concat(artists[0], font)
+    artist_two = concat(artists[1], font)
+    artist_three = concat(artists[2], font)
+    artist_four = concat(artists[3], font)
+    artist_five = concat(artists[4], font)
 
-    track_one = tracks[0]
-    track_two = tracks[1]
-    track_three = tracks[2]
-    track_four = tracks[3]
-    track_five = tracks[4]
+    track_one = concat(tracks[0], font)
+    track_two = concat(tracks[1], font)
+    track_three = concat(tracks[2], font)
+    track_four = concat(tracks[3], font)
+    track_five = concat(tracks[4], font)
 
-
-    artist_three = concat(artist_three, font)
-    track_one = concat(track_one, font)
     # Drawing text on image
     draw.text((650, 200), time, fill="black", font=font, align="left")
 
