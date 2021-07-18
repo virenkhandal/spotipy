@@ -64,7 +64,7 @@ def getTracks(access_token, duration):
     return top_tracks
 
 def get_ig_story(duration, artists, tracks):
-    image = Image.open("igstory.png")
+    image = Image.open("static/igstory.png")
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(r'/System/Library/Fonts/Supplemental/Arial.ttf', 50) 
 
