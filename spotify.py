@@ -63,7 +63,7 @@ def getTracks(access_token, duration):
         top_tracks.append(curr)
     return top_tracks
 
-def get_ig_story():
+def get_ig_story(duration, artists, tracks):
     image = Image.open("igstory.png")
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(r'/System/Library/Fonts/Supplemental/Arial.ttf', 50) 
@@ -74,17 +74,17 @@ def get_ig_story():
 
     # Text to write onto image
     time = "weeks"
-    artist_one = "Kid Cudi"
-    artist_two = "Lana Del Rey"
-    artist_three = "Machine Gun Kelly"
-    artist_four = "Sad Alex"
-    artist_five = "Migos"
+    artist_one = artists[0]
+    artist_two = artists[1]
+    artist_three = artists[2]
+    artist_four = artists[3]
+    artist_five = artists[4]
 
-    track_one = "Vibes (feat. Tyla Yaweh)"
-    track_two = "Lana Del Rey"
-    track_three = "Machine Gu..."
-    track_four = "Sad Alex"
-    track_five = "Migos"
+    track_one = tracks[0]
+    track_two = tracks[1]
+    track_three = tracks[2]
+    track_four = tracks[3]
+    track_five = tracks[4]
 
 
     artist_three = concat(artist_three, font)
