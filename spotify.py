@@ -65,8 +65,8 @@ def getTracks(access_token, duration):
 def get_ig_story(duration, artists, tracks):
     image = Image.open("static/igstory.png")
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(r'Quantico-Regular.ttf', 36) 
-    time_font = ImageFont.truetype(r'Quantico-Bold.ttf', 80) 
+    font = ImageFont.truetype(r'static/Quantico-Regular.ttf', 36) 
+    time_font = ImageFont.truetype(r'static/Quantico-Bold.ttf', 80) 
 
     # Text to write onto image
     time = duration
