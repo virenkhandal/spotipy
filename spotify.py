@@ -83,19 +83,19 @@ def get_ig_story(duration, artists, tracks):
     track_five = concat(tracks[4][0], font)
 
     # Drawing text on image
-    draw.text((650, 200), time, fill="black", font=time_font, align="left")
+    draw.text((650, 162), time, fill="black", font=time_font, align="left")
 
-    draw.text((120, 1180), artist_one, fill="black", font=font, align="left")
-    draw.text((120, 1320), artist_two, fill="black", font=font, align="left")
-    draw.text((120, 1455), artist_three, fill="black", font=font, align="left")
-    draw.text((120, 1595), artist_four, fill="black", font=font, align="left")
-    draw.text((120, 1735), artist_five, fill="black", font=font, align="left")
+    draw.text((120, 1147), artist_one, fill="black", font=font, align="left")
+    draw.text((120, 1212), artist_two, fill="black", font=font, align="left")
+    draw.text((120, 1277), artist_three, fill="black", font=font, align="left")
+    draw.text((120, 1342), artist_four, fill="black", font=font, align="left")
+    draw.text((120, 1407), artist_five, fill="black", font=font, align="left")
 
-    draw.text((670, 1180), track_one, fill="black", font=font, align="left")
-    draw.text((670, 1320), track_two, fill="black", font=font, align="left")
-    draw.text((670, 1455), track_three, fill="black", font=font, align="left")
-    draw.text((670, 1595), track_four, fill="black", font=font, align="left")
-    draw.text((670, 1735), track_five, fill="black", font=font, align="left")
+    draw.text((650, 1147), track_one, fill="black", font=font, align="left")
+    draw.text((650, 1212), track_two, fill="black", font=font, align="left")
+    draw.text((650, 1277), track_three, fill="black", font=font, align="left")
+    draw.text((650, 1342), track_four, fill="black", font=font, align="left")
+    draw.text((650, 1407), track_five, fill="black", font=font, align="left")
 
     # Display image
     image.show()
