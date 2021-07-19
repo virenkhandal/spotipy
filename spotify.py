@@ -108,7 +108,10 @@ def concat(text, font):
         if size[0] > 300:
             artist_breakpoint = i
             break
-    text = ' '.join(split[:artist_breakpoint]) + " ..."
+    if artist_breakpoint < len(split):
+        text = ' '.join(split[:artist_breakpoint]) + "..."
+    else:
+        text = ' '.join(split[:artist_breakpoint])
     return text
 
 if __name__ == "__main__":
