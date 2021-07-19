@@ -1,7 +1,6 @@
 import spotipy, requests
 from PIL import Image, ImageDraw, ImageFont
 from spotipy.oauth2 import SpotifyClientCredentials
-# from private import client_id, secret, oauth
 import jinja2
 env = jinja2.Environment()
 env.globals.update(zip=zip)
@@ -66,11 +65,11 @@ def getTracks(access_token, duration):
 def get_ig_story(duration, artists, tracks):
     image = Image.open("static/igstory.png")
     draw = ImageDraw.Draw(image)
-    font = ImageFont.truetype(r'/System/Library/Fonts/Supplemental/Arial.ttf', 50) 
+    font = ImageFont.truetype(r'Quantico-Regular.ttf', 36) 
+    time_font = ImageFont.truetype(r'Quantico-Bold.ttf', 80) 
 
     # Text to write onto image
     time = duration
-    print(artists[0][0])
     artist_one = concat(artists[0][0], font)
     artist_two = concat(artists[1][0], font)
     artist_three = concat(artists[2][0], font)
@@ -84,11 +83,10 @@ def get_ig_story(duration, artists, tracks):
     track_five = concat(tracks[4][0], font)
 
     # Drawing text on image
-    draw.text((650, 200), time, fill="black", font=font, align="left")
+    draw.text((650, 200), time, fill="black", font=time_font, align="left")
 
     draw.text((120, 1180), artist_one, fill="black", font=font, align="left")
     draw.text((120, 1320), artist_two, fill="black", font=font, align="left")
-
     draw.text((120, 1455), artist_three, fill="black", font=font, align="left")
     draw.text((120, 1595), artist_four, fill="black", font=font, align="left")
     draw.text((120, 1735), artist_five, fill="black", font=font, align="left")
@@ -99,7 +97,6 @@ def get_ig_story(duration, artists, tracks):
     draw.text((670, 1595), track_four, fill="black", font=font, align="left")
     draw.text((670, 1735), track_five, fill="black", font=font, align="left")
 
-    print("bruh")
     # Display image
     image.show()
 
@@ -118,26 +115,3 @@ if __name__ == "__main__":
     pass
     # print(getArtists())
     # print(getTracks())
-
-# artist_file = open('top_artists.txt', 'w')
-# track_file = open('top_tracks.txt', 'w')
-
-# print("Here are your top " + str(payload.get('limit')) + " artists for the past 6 months: ")
-# counter = 1
-# for i in artists.json().get("items"):
-#     string = str(counter) + ". " + i.get("name")
-#     print(string)
-#     artist_file.write(string + "\n")
-#     top_artists.append(string)
-#     counter += 1
-
-# print("\n")
-
-# counter = 1
-# print("Here are your top " + str(payload.get('limit')) + " tracks for the past 6 months: ")
-# for j in tracks.json().get("items"):
-#     string = str(counter) + ". " + j.get("name")
-#     print(string)
-#     track_file.write(string + "\n")
-#     top_tracks.append(string)
-#     counter += 1
