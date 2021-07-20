@@ -37,7 +37,7 @@ def short():
     tracks = getTracks(token, "short")
     session["toke"] = token
     image = get_ig_story("weeks", artists, tracks)
-    return render_template('results.html', artists=artists, tracks=tracks, duration="short")
+    return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
@@ -57,7 +57,7 @@ def medium():
     tracks = getTracks(token, "medium")
     session["toke"] = token
     image = get_ig_story("months", artists, tracks)
-    return render_template('results.html', artists=artists, tracks=tracks, duration="medium")
+    return render_template('results.html', artists=artists, tracks=tracks, duration="medium", image=image)
 
 @app.route('/long/', methods=['GET', 'POST'])
 def longs():
@@ -77,8 +77,11 @@ def longs():
     tracks = getTracks(token, "long")
     session["toke"] = token
     image = get_ig_story("years", artists, tracks)
-    return render_template('results.html', artists=artists, tracks=tracks, duration="long")
+    return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=image)
 
+@app.route('/igstory/<duration>', methods=['GET', 'POST'])
+def story(duration):
+    pass
 
 def render_ig():
     with Image.open('/static/igstory.png') as im:
