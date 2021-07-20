@@ -1,5 +1,6 @@
 import spotipy, requests
 from PIL import Image, ImageDraw, ImageFont
+import StringIO
 from spotipy.oauth2 import SpotifyClientCredentials
 import jinja2
 env = jinja2.Environment()
@@ -98,7 +99,12 @@ def get_ig_story(duration, artists, tracks):
     draw.text((650, 1407), track_five, fill="black", font=font, align="left")
 
     # Display image
-    image.show()
+    buf = StringIO.StringIO()
+    image.save(buf, "PNG")
+    contents = buf.getvalue()
+    return contents
+
+    # image.show()
 
 def concat(text, font):
     split = text.split(" ")
