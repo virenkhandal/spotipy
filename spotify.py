@@ -1,6 +1,6 @@
 import spotipy, requests
 from PIL import Image, ImageDraw, ImageFont
-import StringIO
+from io import StringIO
 from spotipy.oauth2 import SpotifyClientCredentials
 import jinja2
 env = jinja2.Environment()
