@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, send_file
 from flask.templating import render_template_string
 from werkzeug.utils import redirect
 from spotify import *
@@ -18,6 +18,11 @@ app.secret_key = 'bruhbruhbruhbruh'
 def homepage():
     return render_template('index.html')
 
+def serve_pil_image(pil_img):
+    img_io = StringIO()
+    pil_img.save(img_io, 'JPEG', quality=70)
+    img_io.seek(0)
+    return send_file(img_io, mimetype='image/jpeg')
 
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
@@ -26,8 +31,8 @@ def short():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        # "redirect_uri":"http://127.0.0.1:5000/short/",
-        "redirect_uri":"https://spotipy1.herokuapp.com/short/",
+        "redirect_uri":"http://127.0.0.1:5000/short/",
+        # "redirect_uri":"https://spotipy1.herokuapp.com/short/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -37,8 +42,8 @@ def short():
     tracks = getTracks(token, "short")
     session["toke"] = token
     image = get_ig_story("weeks", artists, tracks)
-    print(image)
-    return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
+    return serve_pil_image(image)
+    # return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
