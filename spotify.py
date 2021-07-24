@@ -1,6 +1,6 @@
 import spotipy, requests
 from PIL import Image, ImageDraw, ImageFont
-from io import StringIO
+from io import StringIO, BytesIO
 from spotipy.oauth2 import SpotifyClientCredentials
 import jinja2
 env = jinja2.Environment()
@@ -65,6 +65,8 @@ def getTracks(access_token, duration):
 
 def get_ig_story(duration, artists, tracks):
     image = Image.open("static/igstory.png")
+    if image.mode in ("RGBA", "P"):
+        image = image.convert("RGB")
     draw = ImageDraw.Draw(image)
     font = ImageFont.truetype(r'static/Quantico-Regular.ttf', 36) 
     time_font = ImageFont.truetype(r'static/Quantico-Bold.ttf', 80) 
@@ -99,7 +101,7 @@ def get_ig_story(duration, artists, tracks):
     draw.text((650, 1407), track_five, fill="black", font=font, align="left")
 
     # Display image
-    buf = StringIO()
+    buf = BytesIO()
     image.save(buf, "PNG")
     contents = buf.getvalue()
     return image

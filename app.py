@@ -19,10 +19,10 @@ def homepage():
     return render_template('index.html')
 
 def serve_pil_image(pil_img):
-    img_io = StringIO()
-    pil_img.save(img_io, 'JPEG', quality=70)
+    img_io = BytesIO()
+    pil_img.save(img_io, 'PNG', quality=70)
     img_io.seek(0)
-    return send_file(img_io, mimetype='image/jpeg')
+    return send_file(img_io, mimetype='image/png', as_attachment=True, attachment_filename="Wrapt.png")
 
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
@@ -42,8 +42,7 @@ def short():
     tracks = getTracks(token, "short")
     session["toke"] = token
     image = get_ig_story("weeks", artists, tracks)
-    return serve_pil_image(image)
-    # return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
@@ -87,6 +86,7 @@ def longs():
 
 @app.route('/igstory/<duration>', methods=['GET', 'POST'])
 def story(duration):
+    # return serve_pil_image(image)
     pass
 
 def render_ig():
