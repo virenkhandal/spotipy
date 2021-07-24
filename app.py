@@ -42,9 +42,8 @@ def short():
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
     session["toke"] = token
-    image = get_ig_story("weeks", artists, tracks)
-    img_io = serve_pil_image(image)
-    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
+    img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
+    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
     return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
 
 @app.route('/medium/', methods=['GET', 'POST'])
@@ -64,7 +63,8 @@ def medium():
     artists = getArtists(token, "medium")
     tracks = getTracks(token, "medium")
     session["toke"] = token
-    image = get_ig_story("months", artists, tracks)
+    img_io = serve_pil_image(get_ig_story("months", artists, tracks))
+    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Medium.png")
     return render_template('results.html', artists=artists, tracks=tracks, duration="medium", image=image)
 
 @app.route('/long/', methods=['GET', 'POST'])
@@ -84,7 +84,8 @@ def longs():
     artists = getArtists(token, "long")
     tracks = getTracks(token, "long")
     session["toke"] = token
-    image = get_ig_story("years", artists, tracks)
+    img_io = serve_pil_image(get_ig_story("years", artists, tracks))
+    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Long.png")
     return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=image)
 
 @app.route('/igstory/<duration>', methods=['GET', 'POST'])
