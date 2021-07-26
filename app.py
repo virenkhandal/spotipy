@@ -43,8 +43,8 @@ def short():
     tracks = getTracks(token, "short")
     session["toke"] = token
     img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
-    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=image)
+    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
+    return render_template('results.html', artists=artists, tracks=tracks, duration="short")
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
