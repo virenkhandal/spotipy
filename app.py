@@ -46,7 +46,7 @@ def short():
     img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="short")
+    return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=img_tag)
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
@@ -69,7 +69,7 @@ def medium():
     img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Medium.png")
-    # return render_template('results.html', artists=artists, tracks=tracks, duration="medium", image=image)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="medium", image=img_tag)
 
 @app.route('/long/', methods=['GET', 'POST'])
 def longs():
@@ -92,7 +92,7 @@ def longs():
     img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Long.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=image)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=img_tag)
 
 @app.route('/igstory/<duration>', methods=['GET', 'POST'])
 def story(duration):
