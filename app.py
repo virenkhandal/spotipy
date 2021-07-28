@@ -92,7 +92,7 @@ def longs():
     img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Long.png")
-    # return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=image)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=image)
 
 @app.route('/igstory/<duration>', methods=['GET', 'POST'])
 def story(duration):
