@@ -101,11 +101,14 @@ def get_ig_story(duration, artists, tracks):
     draw.text((650, 1407), track_five, fill="black", font=font, align="left")
 
     # Display image
+    
     image.save("igstory.png", format='PNG')
     buf = BytesIO()
     image.save(buf, "PNG")
     contents = buf.getvalue()
-    return image
+    # text_obj = contents.decode('UTF-8')
+    # image_str = StringIO(text_obj)
+    return contents
 
     # image.show()
 

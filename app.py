@@ -10,6 +10,7 @@ from flask import request
 from urlpath import URL
 import os
 import sys
+import base64
 from PIL import Image, ImageDraw
 app = Flask(__name__)
 auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults'}
@@ -42,7 +43,10 @@ def short():
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
     session["toke"] = token
-    img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
+    # img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
+    img_io = get_ig_story("weeks", artists, tracks)
+    # print(img_io)
+    base64EncodedStr = base64.b64encode(img_io.encode('utf-8'))
     img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
