@@ -44,13 +44,13 @@ def short():
     tracks = getTracks(token, "short")
     session["toke"] = token
     # img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
-    img_io = get_ig_story("weeks", artists, tracks)
+    # img_io = get_ig_story("weeks", artists, tracks)
     # print(img_io)
     # base64EncodedStr = base64.b64encode(img_io.encode('utf-8'))
     # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     # print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="short", image=img_tag)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="short")
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
@@ -69,11 +69,11 @@ def medium():
     artists = getArtists(token, "medium")
     tracks = getTracks(token, "medium")
     session["toke"] = token
-    img_io = serve_pil_image(get_ig_story("months", artists, tracks))
-    img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
-    print(img_tag)
+    # img_io = serve_pil_image(get_ig_story("months", artists, tracks))
+    # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
+    # print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Medium.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="medium", image=img_tag)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="medium")
 
 @app.route('/long/', methods=['GET', 'POST'])
 def longs():
@@ -92,11 +92,11 @@ def longs():
     artists = getArtists(token, "long")
     tracks = getTracks(token, "long")
     session["toke"] = token
-    img_io = serve_pil_image(get_ig_story("years", artists, tracks))
-    img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
-    print(img_tag)
+    # img_io = serve_pil_image(get_ig_story("years", artists, tracks))
+    # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
+    # print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Long.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="long", image=img_tag)
+    return render_template('results.html', artists=artists, tracks=tracks, duration="long")
 
 @app.route('/igstory/<duration>', methods=['GET', 'POST'])
 def story(duration):
