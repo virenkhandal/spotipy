@@ -19,12 +19,12 @@ app.secret_key = 'bruhbruhbruhbruh'
 def homepage():
     return render_template('index.html')
 
-def serve_pil_image(pil_img):
-    img_io = BytesIO()
-    pil_img.save(img_io, 'PNG', quality=70)
-    img_io.seek(0)
-    return img_io
-    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
+# def serve_pil_image(pil_img):
+#     img_io = BytesIO()
+#     pil_img.save(img_io, 'PNG', quality=70)
+#     img_io.seek(0)
+#     return img_io
+#     return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
 
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
@@ -98,17 +98,17 @@ def longs():
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Long.png")
     return render_template('results.html', artists=artists, tracks=tracks, duration="long")
 
-@app.route('/igstory/<duration>', methods=['GET', 'POST'])
-def story(duration):
-    # return serve_pil_image(image)
-    pass
+# @app.route('/igstory/<duration>', methods=['GET', 'POST'])
+# def story(duration):
+#     # return serve_pil_image(image)
+#     pass
 
-def render_ig():
-    with Image.open('/static/igstory.png') as im:
-        draw = ImageDraw.Draw(im)
-        one = 'Kid Cudi'
-        draw.text((5, 5), one)
-        im.show()
+# def render_ig():
+#     with Image.open('/static/igstory.png') as im:
+#         draw = ImageDraw.Draw(im)
+#         one = 'Kid Cudi'
+#         draw.text((5, 5), one)
+#         im.show()
 
 if __name__ == '__main__':
     app.run(debug=True)
