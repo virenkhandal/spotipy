@@ -33,8 +33,8 @@ def short():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        # "redirect_uri":"http://127.0.0.1:5000/short/",
-        "redirect_uri":"https://spotipy1.herokuapp.com/short/",
+        "redirect_uri":"http://127.0.0.1:5000/short/",
+        # "redirect_uri":"https://spotipy1.herokuapp.com/short/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -42,6 +42,7 @@ def short():
     token = res_body.get("access_token")
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
+    print(len(artists))
     session["toke"] = token
     # img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
     # img_io = get_ig_story("weeks", artists, tracks)

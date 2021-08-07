@@ -12,7 +12,7 @@ top_tracks = []
 artists_endpoint = 'https://api.spotify.com/v1/me/top/artists'
 tracks_endpoint = 'https://api.spotify.com/v1/me/top/tracks'
 
-short_payload = {'time_range': 'short_term', 'limit': 10} 
+short_payload = {'time_range': 'short_term', 'limit': 11} 
 mid_payload = {'time_range': 'medium_term', 'limit': 10} 
 long_payload = {'time_range': 'long_term', 'limit': 10} 
 
