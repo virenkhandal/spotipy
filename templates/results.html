@@ -95,7 +95,9 @@
       <strong><h2 class="artist-header">Top artists for the past year</h2></strong>
       {% endif %}
     </div>
-    <div class="row">
+    <!-- {% for row in artists|batch(5, '-') -%}
+    
+    {% endfor %} -->
       <div id="card" class="col">
         <div id="old" class="front">
           <h1 class="one order top"> 1 </h1>
