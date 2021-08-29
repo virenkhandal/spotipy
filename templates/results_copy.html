@@ -101,7 +101,7 @@
       {% set inner_count = 0 %}
       {% for column in row %}
         {% set inner_count = loop.index %}
-        <div id="card" class="col">
+        <div id="card_{{inner_count}}" class="col">
           <div id="old" class="front">
             <h1 class="one order top"> {{inner_count + 1}} </h1>
           </div>
@@ -116,8 +116,8 @@
           function permify(){
             $("#artist").addClass("permanent");
             $("#artist").removeClass("back");
-            $("#card").off(".flip");
-            $("#card").flip(true);
+            $("#card_{{inner_count}}").off(".flip");
+            $("#card_{{inner_count}}").flip(true);
           }
           var isMobile = false; //initiate as false
           // device detection
@@ -126,10 +126,10 @@
               isMobile = true;
           }
           if (isMobile == true){
-            $("#card").flip();
+            $("#card_{{inner_count}}").flip();
             permify();
           } else {
-            $("#card").flip({
+            $("#card_{{inner_count}}").flip({
               axis: 'y',
               trigger: 'hover',
               speed: 100
