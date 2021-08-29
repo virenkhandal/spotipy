@@ -96,6 +96,11 @@
       {% endif %}
     </div>
     {% set outer_count = 0 %}
+      {% for column in artist %}
+
+      {% endfor %}
+
+    {% set outer_count = 0 %}
     {% for row in artists|batch(5, '-') -%}
       {% set outer_count = loop.index %}
       {% set inner_count = 0 %}
