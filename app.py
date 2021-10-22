@@ -42,7 +42,7 @@ def short():
     token = res_body.get("access_token")
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
-    print(len(artists))
+    # print(len(artists))
     session["toke"] = token
     # img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
     # img_io = get_ig_story("weeks", artists, tracks)

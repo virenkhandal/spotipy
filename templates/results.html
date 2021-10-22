@@ -96,28 +96,30 @@
       {% endif %}
     </div>
     <!-- {% set outer_count = 0 %} -->
-    <!-- {% for row in artists|batch(5, '-') -%}
+    {% for row in artists|batch(5) -%}
       {% set outer_count = loop.index %}
-      {% set inner_count = 0 %}
+      <div class="row">
       {% for column in row %}
+        {% set inner_loop = loop %}
         {% set inner_count = loop.index %}
-        <div id="card" class="col">
+        {% set index = inner_count + (outer_count - 1) * 5 %}
+        <div id="card{{index}}" class="col">
           <div id="old" class="front">
-            <h1 class="one order top"> {{inner_count + 1}} </h1>
+            <h1 class="order top"> {{ index }} </h1>
           </div>
-          <div id="artist" class="back">
-            <a href={{artists[0][2]}} target="_blank"><img src={{artists[inner_count][1]}} alt={{ artists[inner_count][1] }} width="200" height="200"/></a>
-            <h6 class="artist-name"><a target="_blank" href={{artists[inner_count][1]}}>{{artists[inner_count][0]}}</a></h6>
-            <h6 class="one order"> {{inner_count + 1}} </h6>
+          <div id="artist{{index}}" class="back">
+            <a href={{artists[index-1][2]}} target="_blank"><img src={{artists[index-1][1]}} alt={{ artists[index-1][1] }} width="200" height="200"/></a>
+            <h6 class="artist-name"><a target="_blank" href={{artists[index-1][1]}}>{{artists[index-1][0]}}</a></h6>
+            <h6 class="order"> {{ index }} </h6>
           </div>
         </div>
         <script>
           
-          function permify(){
-            $("#artist").addClass("permanent");
-            $("#artist").removeClass("back");
-            $("#card").off(".flip");
-            $("#card").flip(true);
+          function permify(index){
+            $("#artist"+index).addClass("permanent");
+            $("#artist"+index).removeClass("back");
+            $("#card"+index).off(".flip");
+            $("#card"+index).flip(true);
           }
           var isMobile = false; //initiate as false
           // device detection
@@ -126,22 +128,24 @@
               isMobile = true;
           }
           if (isMobile == true){
-            $("#card").flip();
-            permify();
+            $("#card{{index}}").flip();
+            permify("{{index}}");
           } else {
-            $("#card").flip({
+            $("#card{{index}}").flip({
               axis: 'y',
               trigger: 'hover',
               speed: 100
             });
-            $("#card").on('flip:done',function(){
-              permify();
+            $("#card{{index}}").on('flip:done',function(){
+              permify("{{index}}");
             });
           }
           
         </script>
       {% endfor %}
-    {% endfor %} -->
+    </div>
+    {% endfor %}
+    <!-- <div class="row">
       <div id="card" class="col">
         <div id="old" class="front">
           <h1 class="one order top"> 1 </h1>
@@ -334,6 +338,7 @@
       </script>
 
     </div>
+    </div>
 
     <div class="row">
       <div id="card6" class="col">
@@ -525,7 +530,7 @@
           });
         }
       </script>
-    </div>
+    </div> -->
 
     <div class="track-header">
       {% if duration == "short" %}
