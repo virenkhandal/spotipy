@@ -19,12 +19,12 @@ app.secret_key = 'bruhbruhbruhbruh'
 def homepage():
     return render_template('index.html')
 
-# def serve_pil_image(pil_img):
-#     img_io = BytesIO()
-#     pil_img.save(img_io, 'PNG', quality=70)
-#     img_io.seek(0)
-#     return img_io
-#     return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
+def serve_pil_image(pil_img):
+    img_io = BytesIO()
+    pil_img.save(img_io, 'PNG', quality=70)
+    img_io.seek(0)
+    return img_io
+    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
 
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
