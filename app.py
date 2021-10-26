@@ -1,3 +1,4 @@
+import json
 from flask import Flask, render_template, request, session, send_file
 from flask.templating import render_template_string
 from werkzeug.utils import redirect, send_from_directory
@@ -10,6 +11,7 @@ from flask import request
 from urlpath import URL
 import os
 import sys
+import ast
 import base64
 from PIL import Image, ImageDraw
 app = Flask(__name__)
@@ -23,8 +25,8 @@ def serve_pil_image(pil_img):
     img_io = BytesIO()
     pil_img.save(img_io, 'PNG', quality=70)
     img_io.seek(0)
-    return img_io
-    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
+    # return img_io
+    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
 
 @app.route('/short/', methods=['GET', 'POST'])
 def short():
@@ -33,8 +35,8 @@ def short():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        "redirect_uri":"http://127.0.0.1:5000/short/",
-        # "redirect_uri":"https://spotipy1.herokuapp.com/short/",
+        # "redirect_uri":"http://127.0.0.1:5000/short/",
+        "redirect_uri":"https://spotipy1.herokuapp.com/short/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -59,8 +61,14 @@ def short():
 
 @app.route('/download', methods=['GET', 'POST'])
 def download():
-    artists = request.args.get('artists')
+    artists = list(request.args.get('artists'))
+    string = ''.join([str(elem) for elem in artists])
+    arr = ast.literal_eval(string)    
+    
     tracks = request.args.get('tracks')
+    t_string = ''.join([str(elem) for elem in tracks])
+    t_arr = ast.literal_eval(t_string)
+
     duration = request.args.get('duration')
     if duration == 'short':
         duration = 'weeks'
@@ -68,9 +76,11 @@ def download():
         duration = 'month'
     else:
         duration = 'year'
-    img_io = get_ig_story(duration, artists, tracks)
-    print(img_io)
-    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
+    img_io = get_ig_story(duration, arr, t_arr)
+    # print(img_io)
+    return serve_pil_image(img_io)
+    # img_io.show()
+    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
@@ -93,7 +103,7 @@ def medium():
     # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     # print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Medium.png")
-    return render_template('results.html', artists=artists, tracks=tracks, duration="medium")
+    return render_template('results.html', artists=map(json.dumps(artists), artists), tracks=json.dumps(tracks), duration=json.dumps("medium"))
 
 @app.route('/long/', methods=['GET', 'POST'])
 def longs():

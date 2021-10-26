@@ -73,6 +73,7 @@ def get_ig_story(duration, artists, tracks):
 
     # Text to write onto image
     time = duration
+    # print(artists)
     artist_one = concat(artists[0][0], font)
     artist_two = concat(artists[1][0], font)
     artist_three = concat(artists[2][0], font)
@@ -102,7 +103,8 @@ def get_ig_story(duration, artists, tracks):
 
     # Display image
     
-    image.save("igstory.png", format='PNG')
+    # image.save("igstory.png", format='PNG')
+    # image.show()
     # buf = BytesIO()
     # image.save(buf, "PNG")
     # contents = buf.getvalue()
@@ -113,6 +115,7 @@ def get_ig_story(duration, artists, tracks):
     # image.show()
 
 def concat(text, font):
+    
     split = text.split(" ")
     artist_breakpoint = len(split)
     for i in range(len(split) + 1):
