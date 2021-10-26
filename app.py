@@ -1,20 +1,15 @@
+from io import BytesIO
 import json
 from flask import Flask, render_template, request, session, send_file
-from flask.templating import render_template_string
-from werkzeug.utils import redirect, send_from_directory
 from spotify import *
 import jinja2
 env = jinja2.Environment()
 env.globals.update(zip=zip)
 import requests
 from flask import request
-from urlpath import URL
-import os
-import sys
 import ast
-import base64
-from PIL import Image, ImageDraw
 app = Flask(__name__)
+
 auth_payload = {'client_id': '61bb4c3ea3c24253a738bd8f34956191', 'response_type': 'token', 'redirect_uri': 'https%3A%2F%2Fspotipy1.herokuapp.com%2Fresults'}
 app.secret_key = 'bruhbruhbruhbruh'
 @app.route('/', methods=['GET', 'POST'])
@@ -44,43 +39,10 @@ def short():
     token = res_body.get("access_token")
     artists = getArtists(token, "short")
     tracks = getTracks(token, "short")
-    # print(len(artists))
     session["toke"] = token
-    # img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
-    # profile = request.files['file']
-    # profile.save(os.path.join(app.config['UPLOAD_FOLDER'], img_io))
-    # img_io = get_ig_story("weeks", artists, tracks)
-    # print(img_io)
-    # print(img_io)
-    # base64EncodedStr = base64.b64encode(img_io.encode('utf-8'))
-    # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
-    # print(img_tag)
-    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
-
     return render_template('results.html', artists=artists, tracks=tracks, duration="short")
 
-@app.route('/download', methods=['GET', 'POST'])
-def download():
-    artists = list(request.args.get('artists'))
-    string = ''.join([str(elem) for elem in artists])
-    arr = ast.literal_eval(string)    
-    
-    tracks = request.args.get('tracks')
-    t_string = ''.join([str(elem) for elem in tracks])
-    t_arr = ast.literal_eval(t_string)
 
-    duration = request.args.get('duration')
-    if duration == 'short':
-        duration = 'weeks'
-    elif duration == 'medium':
-        duration = 'month'
-    else:
-        duration = 'year'
-    img_io = get_ig_story(duration, arr, t_arr)
-    # print(img_io)
-    return serve_pil_image(img_io)
-    # img_io.show()
-    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
@@ -99,10 +61,6 @@ def medium():
     artists = getArtists(token, "medium")
     tracks = getTracks(token, "medium")
     session["toke"] = token
-    # img_io = serve_pil_image(get_ig_story("months", artists, tracks))
-    # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
-    # print(img_tag)
-    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Medium.png")
     return render_template('results.html', artists=map(json.dumps(artists), artists), tracks=json.dumps(tracks), duration=json.dumps("medium"))
 
 @app.route('/long/', methods=['GET', 'POST'])
@@ -122,23 +80,27 @@ def longs():
     artists = getArtists(token, "long")
     tracks = getTracks(token, "long")
     session["toke"] = token
-    # img_io = serve_pil_image(get_ig_story("years", artists, tracks))
-    # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
-    # print(img_tag)
-    # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Long.png")
     return render_template('results.html', artists=artists, tracks=tracks, duration="long")
 
-# @app.route('/igstory/<duration>', methods=['GET', 'POST'])
-# def story(duration):
-#     # return serve_pil_image(image)
-#     pass
+@app.route('/download', methods=['GET', 'POST'])
+def download():
+    artists = list(request.args.get('artists'))
+    string = ''.join([str(elem) for elem in artists])
+    arr = ast.literal_eval(string)    
+    
+    tracks = request.args.get('tracks')
+    t_string = ''.join([str(elem) for elem in tracks])
+    t_arr = ast.literal_eval(t_string)
 
-# def render_ig():
-#     with Image.open('/static/igstory.png') as im:
-#         draw = ImageDraw.Draw(im)
-#         one = 'Kid Cudi'
-#         draw.text((5, 5), one)
-#         im.show()
+    duration = request.args.get('duration')
+    if duration == 'short':
+        duration = 'weeks'
+    elif duration == 'medium':
+        duration = 'month'
+    else:
+        duration = 'year'
+    img_io = get_ig_story(duration, arr, t_arr)
+    return serve_pil_image(img_io)
 
 if __name__ == '__main__':
     app.run(debug=True)
