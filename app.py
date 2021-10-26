@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, send_file
 from flask.templating import render_template_string
-from werkzeug.utils import redirect
+from werkzeug.utils import redirect, send_from_directory
 from spotify import *
 import jinja2
 env = jinja2.Environment()
@@ -33,8 +33,8 @@ def short():
     res = requests.post(auth_token_url, data={
         "grant_type":"authorization_code",
         "code":code,
-        # "redirect_uri":"http://127.0.0.1:5000/short/",
-        "redirect_uri":"https://spotipy1.herokuapp.com/short/",
+        "redirect_uri":"http://127.0.0.1:5000/short/",
+        # "redirect_uri":"https://spotipy1.herokuapp.com/short/",
         "client_id":'61bb4c3ea3c24253a738bd8f34956191',
         "client_secret":'43e1501fc8d94c768d8af79f096395eb'
         })
@@ -45,13 +45,32 @@ def short():
     # print(len(artists))
     session["toke"] = token
     # img_io = serve_pil_image(get_ig_story("weeks", artists, tracks))
+    # profile = request.files['file']
+    # profile.save(os.path.join(app.config['UPLOAD_FOLDER'], img_io))
     # img_io = get_ig_story("weeks", artists, tracks)
+    # print(img_io)
     # print(img_io)
     # base64EncodedStr = base64.b64encode(img_io.encode('utf-8'))
     # img_tag = "<img src='data:image/png;base64,'" + img_io + "</img>"
     # print(img_tag)
     # return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt_Short.png")
+
     return render_template('results.html', artists=artists, tracks=tracks, duration="short")
+
+@app.route('/download', methods=['GET', 'POST'])
+def download():
+    artists = request.args.get('artists')
+    tracks = request.args.get('tracks')
+    duration = request.args.get('duration')
+    if duration == 'short':
+        duration = 'weeks'
+    elif duration == 'medium':
+        duration = 'month'
+    else:
+        duration = 'year'
+    img_io = get_ig_story(duration, artists, tracks)
+    print(img_io)
+    return send_file(img_io, mimetype='image/png', as_attachment=True, download_name="Wrapt.png")
 
 @app.route('/medium/', methods=['GET', 'POST'])
 def medium():
