@@ -96,9 +96,9 @@ def download():
     if duration == 'short':
         duration = 'weeks'
     elif duration == 'medium':
-        duration = 'month'
+        duration = 'months'
     else:
-        duration = 'year'
+        duration = 'years'
     img_io = get_ig_story(duration, arr, t_arr)
     return serve_pil_image(img_io)
 
