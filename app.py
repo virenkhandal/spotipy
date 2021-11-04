@@ -61,7 +61,7 @@ def medium():
     artists = getArtists(token, "medium")
     tracks = getTracks(token, "medium")
     session["toke"] = token
-    return render_template('results.html', artists=map(json.dumps(artists), artists), tracks=json.dumps(tracks), duration=json.dumps("medium"))
+    return render_template('results.html', artists=artists, tracks=tracks, duration="medium")
 
 @app.route('/long/', methods=['GET', 'POST'])
 def longs():
