@@ -1,6 +1,7 @@
 import spotipy, requests
 from PIL import Image, ImageDraw, ImageFont
 import jinja2
+import random
 env = jinja2.Environment()
 env.globals.update(zip=zip)
 
@@ -62,7 +63,11 @@ def getTracks(access_token, duration):
     return top_tracks
 
 def get_ig_story(duration, artists, tracks):
-    image = Image.open("static/igstory.png")
+    coin = random.randint(0, 1)
+    if coin == 0:
+        image = Image.open("static/cold.png")
+    else:
+        image = Image.open("static/hot.png")
     if image.mode in ("RGBA", "P"):
         image = image.convert("RGB")
     draw = ImageDraw.Draw(image)
