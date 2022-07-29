@@ -79,17 +79,65 @@ def get_ig_story(duration, artists, tracks):
     # Text to write onto image
     time = duration
     # print(artists)
-    artist_one = concat(artists[0][0], font)
-    artist_two = concat(artists[1][0], font)
-    artist_three = concat(artists[2][0], font)
-    artist_four = concat(artists[3][0], font)
-    artist_five = concat(artists[4][0], font)
+    try:
+        artist_one = concat(artists[0][0], font)
+    except IndexError:
+        artist_one = ""
 
-    track_one = concat(tracks[0][0], font)
-    track_two = concat(tracks[1][0], font)
-    track_three = concat(tracks[2][0], font)
-    track_four = concat(tracks[3][0], font)
-    track_five = concat(tracks[4][0], font)
+    try:
+        artist_two = concat(artists[1][0], font)
+    except IndexError:
+        artist_two = ""
+
+    try:
+        artist_three = concat(artists[2][0], font)
+    except IndexError:
+        artist_three = ""
+
+    try:
+        artist_four = concat(artists[3][0], font)
+    except IndexError:
+        artist_four = ""
+
+    try:
+        artist_five = concat(artists[4][0], font)
+    except IndexError:
+        artist_five = ""
+    # artist_two = concat(artists[1][0], font)
+    # artist_three = concat(artists[2][0], font)
+    # artist_four = concat(artists[3][0], font)
+    # artist_five = concat(artists[4][0], font)
+
+
+    try:
+        track_one = concat(tracks[0][0], font)
+    except IndexError:
+        track_one = ""
+
+    try:
+        track_two = concat(tracks[1][0], font)
+    except IndexError:
+        track_two = ""
+
+    try:
+        track_three = concat(tracks[2][0], font)
+    except IndexError:
+        track_three = ""
+
+    try:
+        track_four = concat(tracks[3][0], font)
+    except IndexError:
+        track_four = ""
+
+    try:
+        track_five = concat(tracks[4][0], font)
+    except IndexError:
+        track_five = ""
+    # track_one = concat(tracks[0][0], font)
+    # track_two = concat(tracks[1][0], font)
+    # track_three = concat(tracks[2][0], font)
+    # track_four = concat(tracks[3][0], font)
+    # track_five = concat(tracks[4][0], font)
 
     # Drawing text on image
     draw.text((650, 162), time, fill="black", font=time_font, align="left")
